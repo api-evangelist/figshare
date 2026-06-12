@@ -1,0 +1,158 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+provider: Figshare
+providerId: figshare
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+type: freemium
+description: >-
+  Figshare offers a freemium model with a free tier for individual researchers
+  and paid Figshare+ tiers for larger datasets. Institutional plans are available
+  via custom quotes. The free plan provides 20GB private storage with full API
+  access. Figshare+ uses a one-time Data Publishing Charge (DPC) model based on
+  storage volume rather than a subscription.
+plans:
+  - name: Free
+    description: >-
+      Free plan for individual researchers on figshare.com. Includes full API
+      access, article publishing, DOI assignment, and 20GB private storage.
+    type: free
+    quotas:
+      - metric: private_storage_gb
+        limit: 20
+        timeFrame: lifetime
+        type: quota
+      - metric: max_file_size_gb
+        limit: 20
+        timeFrame: per_upload
+        type: quota
+      - metric: max_files_per_item
+        limit: 500
+        type: boolean
+      - metric: max_collections
+        limit: 100
+        type: quota
+      - metric: max_projects
+        limit: 100
+        type: quota
+      - metric: max_items
+        limit: 500
+        type: quota
+      - metric: max_collaborators_per_project
+        limit: 100
+        type: quota
+    price:
+      amount: 0
+      currency: USD
+      cadence: free
+
+  - name: Figshare+ Small
+    description: >-
+      One-time Data Publishing Charge for datasets between 21GB and 250GB.
+      Includes expert curation, DOI assignment, and persistent storage.
+    type: paid
+    quotas:
+      - metric: storage_gb
+        limit: 250
+        type: quota
+      - metric: max_file_size_tb
+        limit: 5
+        type: quota
+      - metric: dataset_items_per_deposit
+        limit: 10
+        type: quota
+    price:
+      amount: 1225
+      currency: USD
+      cadence: one-time
+    metered:
+      - metric: storage_per_250gb_tier
+        unit: 250GB
+        rate: 1225
+        currency: USD
+
+  - name: Figshare+ Medium
+    description: >-
+      One-time Data Publishing Charge for datasets between 251GB and 500GB.
+    type: paid
+    quotas:
+      - metric: storage_gb
+        limit: 500
+        type: quota
+    price:
+      amount: 2450
+      currency: USD
+      cadence: one-time
+
+  - name: Figshare+ Large
+    description: >-
+      One-time Data Publishing Charge for datasets between 501GB and 750GB.
+    type: paid
+    quotas:
+      - metric: storage_gb
+        limit: 750
+        type: quota
+    price:
+      amount: 3675
+      currency: USD
+      cadence: one-time
+
+  - name: Figshare+ Extra Large
+    description: >-
+      One-time Data Publishing Charge for datasets between 751GB and 1TB.
+    type: paid
+    quotas:
+      - metric: storage_gb
+        limit: 1000
+        type: quota
+    price:
+      amount: 4900
+      currency: USD
+      cadence: one-time
+
+  - name: Figshare+ Up to 5TB
+    description: >-
+      One-time Data Publishing Charge for datasets between 1TB and 5TB.
+      Maximum size for academic and non-profit organizations. Commercial
+      organizations are limited to 1TB.
+    type: paid
+    quotas:
+      - metric: storage_tb
+        limit: 5
+        type: quota
+    price:
+      amount: 24500
+      currency: USD
+      cadence: one-time
+
+  - name: Figshare+ Over 5TB
+    description: >-
+      Custom quote required for datasets over 5TB. Academic and non-profit
+      organizations only.
+    type: enterprise
+    quotas:
+      - metric: storage_tb
+        limit: unlimited
+        type: quota
+    price:
+      cadence: custom
+      notes: Contact Figshare for custom pricing on datasets exceeding 5TB
+
+  - name: Institutional Figshare
+    description: >-
+      Enterprise plan for universities and research institutions. Provides
+      branded institutional repository with custom storage quotas, up to
+      5TB individual file size, admin controls, HR feed integration, and
+      custom field management. Pricing available on request.
+    type: enterprise
+    quotas:
+      - metric: max_file_size_tb
+        limit: 5
+        type: quota
+      - metric: virus_scan_mb
+        limit: 100
+        type: quota
+    price:
+      cadence: custom
+      notes: Contact Figshare/Springer Nature for institutional pricing

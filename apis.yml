@@ -1,0 +1,82 @@
+aid: figshare
+name: Figshare
+description: >-
+  Figshare is a research data repository platform that enables researchers, institutions, and
+  organizations to upload, manage, and publicly share scientific outputs including datasets,
+  figures, media, papers, posters, and software. The platform provides persistent DOI assignment
+  for all published research outputs, enabling proper citation and long-term discoverability.
+  Figshare's REST API v2 allows programmatic access to articles, collections, projects, file
+  uploads, statistics, and administrative functions. The platform is built on AWS infrastructure
+  and supports both individual researchers with a free 20GB tier and institutional deployments
+  with custom storage configurations up to multiple terabytes.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Research Data
+  - Data Repository
+  - Open Science
+  - DOI
+  - Datasets
+  - Academic
+  - File Storage
+  - Open Access
+url: https://raw.githubusercontent.com/api-evangelist/figshare/refs/heads/main/apis.yml
+created: '2026-06-12'
+modified: '2026-06-12'
+specificationVersion: '0.19'
+apis:
+  - aid: figshare-api
+    name: Figshare API
+    description: >-
+      The Figshare REST API v2 provides full programmatic access to the platform, including
+      public and private article management, file uploads (standard and S3-based), collections,
+      projects, authors, licenses, funding, statistics, search, OAI-PMH harvesting, and
+      institutional administration endpoints. Authentication is via OAuth 2.0 or personal tokens.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://docs.figshare.com/
+    baseURL: https://api.figshare.com/v2
+    tags:
+      - Research Data
+      - Datasets
+      - DOI
+      - File Uploads
+      - Collections
+      - Projects
+      - Articles
+    properties:
+      - type: Documentation
+        url: https://docs.figshare.com/
+      - type: OpenAPI
+        url: https://docs.figshare.com/swagger.json
+      - type: Authentication
+        url: https://docs.figshare.com/api_reference/oauth/
+common:
+  - type: Website
+    url: https://figshare.com/
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: GitHubOrganization
+    url: https://github.com/figshare
+  - type: Blog
+    url: https://info.figshare.com/blog/
+  - type: Pricing
+    url: https://info.figshare.com/figshare-plus/
+  - type: StatusPage
+    url: https://status.figshare.com/
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/figshare/
+  - type: X
+    url: https://x.com/figshare
+  - type: Support
+    url: https://support.figshare.com/
+  - type: UserDocumentation
+    url: https://info.figshare.com/user-guide/how-to-use-the-figshare-api/
+  - type: Plans
+    url: plans/figshare-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/figshare-rate-limits.yml
+  - type: FinOps
+    url: finops/figshare-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

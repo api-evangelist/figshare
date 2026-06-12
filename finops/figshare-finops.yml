@@ -1,0 +1,91 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+provider: Figshare
+providerId: figshare
+created: '2026-06-12'
+modified: '2026-06-12'
+description: >-
+  Figshare uses a freemium + one-time publishing charge billing model. Free
+  individual accounts have no recurring cost. Figshare+ tiers charge a one-time
+  Data Publishing Charge (DPC) based on storage volume in 250GB increments.
+  Institutional plans are subscription-based with custom pricing. There are no
+  API usage fees — all API access is included in the account tier.
+billingModel: freemium-plus-one-time-charge
+focusColumns:
+  - BilledCost
+  - EffectiveCost
+  - ChargeCategory
+  - ChargeDescription
+  - ResourceId
+  - ServiceName
+  - ServiceCategory
+  - UsageQuantity
+  - UsageUnit
+  - PricingUnit
+  - PricingQuantity
+meters:
+  - name: StorageDeposit
+    description: >-
+      One-time charge per data deposit based on total storage volume in 250GB
+      tiers. Applies to Figshare+ plans.
+    unit: 250GB
+    ratePerUnit: 1225
+    currency: USD
+    chargeType: one-time
+    focusChargeCategory: Purchase
+  - name: PrivateStorage
+    description: >-
+      Free private storage included with all figshare.com accounts up to 20GB.
+      No charge for usage within the free quota.
+    unit: GB
+    ratePerUnit: 0
+    currency: USD
+    chargeType: included
+    limit: 20
+    focusChargeCategory: Usage
+  - name: CurationReview
+    description: >-
+      Expert metadata review and curation service included in Figshare+ deposits.
+      Previously separately priced at $160/deposit; now bundled into DPC pricing.
+    unit: deposit
+    chargeType: bundled
+    focusChargeCategory: Purchase
+  - name: InstitutionalSubscription
+    description: >-
+      Annual subscription fee for Institutional Figshare repositories. Custom
+      pricing based on institution size and storage requirements.
+    unit: institution/year
+    chargeType: subscription
+    focusChargeCategory: Recurring
+    notes: Custom pricing — contact Figshare/Springer Nature
+principles:
+  Visibility:
+    description: >-
+      Figshare+ charges are transparent and shown upfront as one-time DPC costs
+      before deposit. Free tier usage is clearly bounded at 20GB. Institutional
+      costs are negotiated but should be tracked as annual commitments.
+    recommendations:
+      - Track Figshare+ deposit charges as one-time capital expenditure per project
+      - Monitor free tier storage consumption to plan for Figshare+ upgrades
+      - Document institutional contract terms and renewal dates
+  Optimization:
+    description: >-
+      Optimize costs by depositing related datasets together to reduce per-deposit
+      overhead, using the free 20GB tier for smaller supplementary materials, and
+      leveraging institutional access when available for large-scale archiving.
+    recommendations:
+      - Batch related datasets into single deposits to minimize per-deposit fixed costs
+      - Use free figshare.com tier for datasets under 20GB to avoid DPC entirely
+      - Investigate institutional Figshare access through your organization before
+        paying individual Figshare+ charges
+      - For commercial entities, note the 1TB maximum for Figshare+ plans
+costAllocation:
+  dimensions:
+    - project
+    - department
+    - grant
+    - publication
+  notes: >-
+    Figshare does not natively provide cost allocation tags across API calls.
+    Institutional admin APIs allow per-group and per-account management which
+    can be used for departmental chargeback purposes.

@@ -1,0 +1,53 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+provider: Figshare
+providerId: figshare
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+description: >-
+  Figshare does not enforce hard automatic rate limits on the API. Instead, the
+  platform monitors usage and reserves the right to throttle or block requests
+  if abuse is detected. The official recommendation is no more than one request
+  per second. Violations may result in temporary throttling (HTTP 429) or
+  blocking at Figshare's discretion.
+retryAfter:
+  header: Retry-After
+  description: >-
+    If a 429 response is returned due to detected abuse or excessive requests,
+    clients should honor the Retry-After header value before retrying.
+throttled: 429
+limits:
+  - scope: global
+    metric: requests_per_second
+    limit: 1
+    timeFrame: second
+    recommended: true
+    enforced: false
+    notes: >-
+      Figshare recommends clients limit to 1 request per second. This is a
+      soft recommendation; there is no hard automatic throttle, but excessive
+      usage may trigger monitoring-based restrictions.
+  - scope: file_upload
+    metric: max_file_size_standard_gb
+    limit: 20
+    timeFrame: per_upload
+    notes: >-
+      Standard accounts are limited to 20GB per individual file upload.
+      Figshare+ and institutional accounts support up to 5TB per file (AWS S3
+      multipart upload).
+  - scope: items
+    metric: max_files_per_item
+    limit: 500
+    timeFrame: per_item
+    notes: >-
+      A maximum of 500 files per item/article applies. Institutional admins
+      may be able to request an increase.
+policy:
+  abuseDetection: true
+  automaticThrottle: false
+  monitoringEnabled: true
+  blockingPolicy: >-
+    Figshare reserves the right to throttle or block API requests if monitoring
+    detects usage patterns consistent with abuse or excessive load.
+  documentation: https://docs.figshare.com/
