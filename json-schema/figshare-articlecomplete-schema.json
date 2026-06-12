@@ -1,0 +1,69 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ArticleComplete",
+  "description": "Figshare ArticleComplete schema",
+  "required": [
+    "authors",
+    "custom_fields",
+    "download_disabled",
+    "embargo_options",
+    "figshare_url",
+    "files",
+    "folder_structure"
+  ],
+  "properties": {
+    "figshare_url": {
+      "type": "string",
+      "description": "Article public url",
+      "format": "url",
+      "example": "http://figshare.com/articles/media/article_name/2000005"
+    },
+    "download_disabled": {
+      "type": "boolean",
+      "description": "If true, downloading of files for this article is disabled",
+      "example": false
+    },
+    "files": {
+      "type": "array",
+      "description": "List of up to 10 article files.",
+      "items": {
+        "$ref": "#/components/schemas/PublicFile"
+      }
+    },
+    "folder_structure": {
+      "type": "object",
+      "properties": {},
+      "description": "Mapping of file ids to folder paths, if folders are used",
+      "example": {
+        "3000002": "Test Folder"
+      }
+    },
+    "authors": {
+      "type": "array",
+      "description": "List of article authors",
+      "items": {
+        "$ref": "#/components/schemas/Author"
+      }
+    },
+    "custom_fields": {
+      "type": "array",
+      "description": "List of custom fields values",
+      "items": {
+        "$ref": "#/components/schemas/CustomArticleField"
+      }
+    },
+    "embargo_options": {
+      "type": "array",
+      "description": "List of embargo options",
+      "items": {
+        "$ref": "#/components/schemas/GroupEmbargoOptions"
+      }
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/ProjectArticle"
+    }
+  ],
+  "x-tag": "articles"
+}

@@ -1,0 +1,67 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "figshare": "https://docs.figshare.com/api_reference/#",
+    "schema": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "Article": "schema:ScholarlyArticle",
+    "Collection": "schema:Collection",
+    "Project": "schema:ResearchProject",
+    "Author": "schema:Person",
+    "License": "schema:CreativeWork",
+    "Category": "schema:Category",
+    "FundingInformation": "schema:Grant",
+    "id": "@id",
+    "title": "schema:name",
+    "description": "schema:description",
+    "doi": {
+      "@id": "schema:identifier",
+      "@type": "schema:PropertyValue"
+    },
+    "published_date": {
+      "@id": "schema:datePublished",
+      "@type": "xsd:dateTime"
+    },
+    "created_date": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "modified_date": {
+      "@id": "schema:dateModified",
+      "@type": "xsd:dateTime"
+    },
+    "url": "schema:url",
+    "url_public_html": "schema:url",
+    "tags": "schema:keywords",
+    "categories": "schema:about",
+    "authors": "schema:author",
+    "files": "schema:hasPart",
+    "license": "schema:license",
+    "funding": "schema:funding",
+    "defined_type_name": "schema:additionalType",
+    "name": "schema:name",
+    "full_name": "schema:name",
+    "email": "schema:email",
+    "orcid_id": "schema:identifier",
+    "size": {
+      "@id": "schema:contentSize",
+      "@type": "xsd:integer"
+    },
+    "download_url": "schema:contentUrl",
+    "computed_md5": "schema:hashValue",
+    "storage": "schema:storageRequirements",
+    "quota": "schema:maxValue",
+    "used_quota": "schema:value",
+    "group_id": "figshare:group_id",
+    "institution_id": "figshare:institution_id",
+    "handle": "figshare:handle",
+    "resource_doi": "figshare:resource_doi",
+    "timeline": "figshare:timeline",
+    "embargo_type": "figshare:embargo_type",
+    "embargo_date": "figshare:embargo_date",
+    "is_public": "figshare:is_public",
+    "is_active": "figshare:is_active",
+    "is_confidential": "figshare:is_confidential"
+  }
+}

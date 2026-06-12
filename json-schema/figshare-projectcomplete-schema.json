@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ProjectComplete",
+  "description": "Figshare ProjectComplete schema",
+  "required": [
+    "collaborators",
+    "created_date",
+    "custom_fields",
+    "description",
+    "funding",
+    "funding_list",
+    "modified_date"
+  ],
+  "properties": {
+    "funding": {
+      "type": "string",
+      "description": "Project funding",
+      "example": ""
+    },
+    "funding_list": {
+      "type": "array",
+      "description": "Full Project funding information",
+      "items": {
+        "$ref": "#/components/schemas/FundingInformation"
+      }
+    },
+    "description": {
+      "type": "string",
+      "description": "Project description",
+      "example": "description"
+    },
+    "collaborators": {
+      "type": "array",
+      "description": "List of project collaborators",
+      "items": {
+        "$ref": "#/components/schemas/Collaborator"
+      }
+    },
+    "custom_fields": {
+      "type": "array",
+      "description": "Project custom fields",
+      "items": {
+        "$ref": "#/components/schemas/CustomArticleField"
+      }
+    },
+    "modified_date": {
+      "type": "string",
+      "description": "Date when project was last modified",
+      "example": "2017-05-16T14:52:54Z"
+    },
+    "created_date": {
+      "type": "string",
+      "description": "Date when project was created",
+      "example": "2017-05-16T14:52:54Z"
+    }
+  },
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/Project"
+    }
+  ],
+  "x-tag": "projects"
+}

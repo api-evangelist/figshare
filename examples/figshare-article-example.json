@@ -1,0 +1,22 @@
+{
+  "id": 123456,
+  "title": "Climate Change Dataset 2024",
+  "doi": "10.6084/m9.figshare.123456.v1",
+  "handle": "",
+  "url": "https://api.figshare.com/v2/articles/123456",
+  "published_date": "2024-03-15T10:00:00Z",
+  "thumb": "",
+  "defined_type": 3,
+  "defined_type_name": "dataset",
+  "group_id": 0,
+  "url_private_api": "https://api.figshare.com/v2/account/articles/123456",
+  "url_public_api": "https://api.figshare.com/v2/articles/123456",
+  "url_private_html": "https://figshare.com/account/articles/123456",
+  "url_public_html": "https://figshare.com/articles/dataset/Climate_Change_Dataset_2024/123456",
+  "timeline": {
+    "posted": "2024-03-15T10:00:00",
+    "firstOnline": "2024-03-15T10:00:00"
+  },
+  "resource_doi": null,
+  "resource_title": null
+}

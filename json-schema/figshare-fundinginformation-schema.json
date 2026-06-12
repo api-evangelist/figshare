@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FundingInformation",
+  "description": "Figshare FundingInformation schema",
+  "required": [
+    "funder_name",
+    "grant_code",
+    "id",
+    "is_user_defined",
+    "title",
+    "url"
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Funding id",
+      "example": 1
+    },
+    "title": {
+      "type": "string",
+      "description": "The funding name",
+      "example": "Scholarly funding"
+    },
+    "grant_code": {
+      "type": "string",
+      "description": "The grant code"
+    },
+    "funder_name": {
+      "type": "string",
+      "description": "Funder's name"
+    },
+    "is_user_defined": {
+      "type": "integer",
+      "description": "Return 1 whether the grant has been introduced manually, 0 otherwise"
+    },
+    "url": {
+      "type": "string",
+      "description": "The grant url",
+      "format": "url",
+      "example": "https://app.dimensions.ai/details/grant/1"
+    }
+  },
+  "x-tag": "funding"
+}

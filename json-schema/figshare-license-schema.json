@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "License",
+  "description": "Figshare License schema",
+  "required": [
+    "name",
+    "url",
+    "value"
+  ],
+  "type": "object",
+  "properties": {
+    "value": {
+      "type": "integer",
+      "description": "License value",
+      "example": 1
+    },
+    "name": {
+      "type": "string",
+      "description": "License name",
+      "example": "CC BY"
+    },
+    "url": {
+      "type": "string",
+      "description": "License url",
+      "format": "url",
+      "example": "http://creativecommons.org/licenses/by/4.0/"
+    }
+  },
+  "x-tag": "institutions"
+}

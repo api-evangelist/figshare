@@ -1,0 +1,13 @@
+{
+  "upload_url": "https://fup.figshare.com/upload/abc123",
+  "upload_token": "abc123token",
+  "id": 56789,
+  "name": "climate_data.csv",
+  "size": 1048576,
+  "is_link_only": false,
+  "download_url": "https://ndownloader.figshare.com/files/56789",
+  "supplied_md5": "abc123def456",
+  "computed_md5": "abc123def456",
+  "status": "available",
+  "preview_state": "preview_not_available"
+}

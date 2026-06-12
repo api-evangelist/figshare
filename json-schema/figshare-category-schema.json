@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Category",
+  "description": "Figshare Category schema",
+  "required": [
+    "id",
+    "parent_id",
+    "path",
+    "source_id",
+    "taxonomy_id",
+    "title"
+  ],
+  "type": "object",
+  "properties": {
+    "parent_id": {
+      "type": "integer",
+      "description": "Parent category",
+      "example": 1
+    },
+    "id": {
+      "type": "integer",
+      "description": "Category id",
+      "example": 11
+    },
+    "title": {
+      "type": "string",
+      "description": "Category title",
+      "example": "Anatomy"
+    },
+    "path": {
+      "type": "string",
+      "description": "Path to all ancestor ids",
+      "example": "/450/1024/6532"
+    },
+    "source_id": {
+      "type": "string",
+      "description": "ID in original standard taxonomy",
+      "example": "300204"
+    },
+    "taxonomy_id": {
+      "type": "integer",
+      "description": "Internal id of taxonomy the category is part of",
+      "example": 4
+    }
+  },
+  "x-tag": "common"
+}

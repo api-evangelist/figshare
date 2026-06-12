@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Author",
+  "description": "Figshare Author schema",
+  "required": [
+    "first_name",
+    "full_name",
+    "id",
+    "is_active",
+    "last_name",
+    "orcid_id",
+    "url_name"
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Author id",
+      "example": 97657
+    },
+    "full_name": {
+      "type": "string",
+      "description": "Author full name",
+      "example": "John Doe"
+    },
+    "first_name": {
+      "type": "string",
+      "description": "Author first name",
+      "example": "John"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Author last name",
+      "example": "Doe"
+    },
+    "is_active": {
+      "type": "boolean",
+      "description": "True if author has published items",
+      "example": false
+    },
+    "url_name": {
+      "type": "string",
+      "description": "Author url name",
+      "example": "John_Doe"
+    },
+    "orcid_id": {
+      "type": "string",
+      "description": "Author Orcid",
+      "example": "1234-5678-9123-1234"
+    }
+  },
+  "x-tag": "authors"
+}

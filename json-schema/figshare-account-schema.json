@@ -1,0 +1,125 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Account",
+  "description": "Figshare Account schema",
+  "required": [
+    "active",
+    "created_date",
+    "email",
+    "first_name",
+    "group_id",
+    "id",
+    "institution_id",
+    "institution_user_id",
+    "last_name",
+    "maximum_file_size",
+    "modified_date",
+    "orcid_id",
+    "pending_quota_request",
+    "quota",
+    "symplectic_user_id",
+    "used_quota",
+    "used_quota_private",
+    "used_quota_public",
+    "user_id"
+  ],
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Account id",
+      "example": 1495682
+    },
+    "first_name": {
+      "type": "string",
+      "description": "First Name",
+      "example": "Doe"
+    },
+    "last_name": {
+      "type": "string",
+      "description": "Last Name",
+      "example": "John"
+    },
+    "used_quota_private": {
+      "type": "integer",
+      "description": "Account used private quota",
+      "example": 0
+    },
+    "modified_date": {
+      "type": "string",
+      "description": "Date of last account modification",
+      "example": "2018-05-22T04:04:04"
+    },
+    "used_quota": {
+      "type": "integer",
+      "description": "Account total used quota",
+      "example": 0
+    },
+    "created_date": {
+      "type": "string",
+      "description": "Date when account was created",
+      "example": "2018-05-22T04:04:04"
+    },
+    "quota": {
+      "type": "integer",
+      "description": "Account quota",
+      "example": 0
+    },
+    "group_id": {
+      "type": "integer",
+      "description": "Account group id",
+      "example": 0
+    },
+    "institution_user_id": {
+      "type": "string",
+      "description": "Account institution user id",
+      "example": "djohn42"
+    },
+    "institution_id": {
+      "type": "integer",
+      "description": "Account institution",
+      "example": 1
+    },
+    "email": {
+      "type": "string",
+      "description": "User email",
+      "example": "user@domain.com"
+    },
+    "used_quota_public": {
+      "type": "integer",
+      "description": "Account public used quota",
+      "example": 0
+    },
+    "pending_quota_request": {
+      "type": "boolean",
+      "description": "True if a quota request is pending",
+      "example": true
+    },
+    "active": {
+      "type": "integer",
+      "description": "Account activity status",
+      "example": 0
+    },
+    "maximum_file_size": {
+      "type": "integer",
+      "description": "Maximum upload size for account",
+      "example": 0
+    },
+    "user_id": {
+      "type": "integer",
+      "description": "User id associated with account, useful for example for adding the account as an author to an item",
+      "example": 1000001
+    },
+    "orcid_id": {
+      "type": "string",
+      "description": "ORCID iD associated to account",
+      "example": "0000-0001-2345-6789"
+    },
+    "symplectic_user_id": {
+      "type": "string",
+      "description": "Symplectic ID associated to account",
+      "example": "djohn42"
+    }
+  },
+  "x-tag": "other"
+}

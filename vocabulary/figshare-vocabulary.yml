@@ -1,0 +1,1345 @@
+name: Figshare API Vocabulary
+description: Terms and properties used across the Figshare REST API v2.
+url: https://docs.figshare.com/
+version: '2.0'
+terms:
+- name: abstract
+  description: Note Abstract - short/truncated content
+  type: string
+  usedIn:
+  - ProjectNote
+- name: access_token
+  description: The OAuth access token
+  type: string
+  usedIn:
+  - OAuthToken
+- name: account_id
+  description: ID of created account
+  type: integer
+  usedIn:
+  - AccountCreateResponse
+  - AccountReport
+  - ArticleCompletePrivate
+  - CollectionCompletePrivate
+  - Curation
+  - CurationComment
+  - PrivateProjectArticle
+  - ProjectCompletePrivate
+- name: active
+  description: Account activity status
+  type: integer
+  usedIn:
+  - Account
+  - ShortAccount
+- name: article_id
+  description: The ID of the article of this review.
+  type: integer
+  usedIn:
+  - Curation
+- name: articles
+  description: List of article ids
+  type: array
+  usedIn:
+  - ArticlesCreator
+  - CollectionCreate
+  - CollectionUpdate
+- name: articles_count
+  description: Number of articles in collection
+  type: integer
+  usedIn:
+  - CollectionComplete
+  - CollectionCompletePrivate
+- name: assigned_to
+  description: The ID of the account to which this review is assigned.
+  type: integer
+  usedIn:
+  - Curation
+- name: association_criteria
+  description: HR code associated with group, if code exists
+  type: string
+  usedIn:
+  - Group
+- name: authors
+  description: List of article authors
+  type: array
+  usedIn:
+  - ArticleComplete
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - AuthorsCreator
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - PrivateProjectArticle
+- name: bio
+  description: User biographical information
+  type: string
+  usedIn:
+  - ProfileUpdateData
+- name: categories
+  description: List of category ids to be associated with the article(e.g [1, 23,
+    33, 66])
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CategoriesCreator
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectArticle
+- name: categories_by_source_id
+  description: List of category source ids to be associated with the article, supersedes
+    the categories property
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionCreate
+  - CollectionUpdate
+- name: category
+  description: Role category
+  type: string
+  usedIn:
+  - Role
+- name: citation
+  description: Collection citation
+  type: string
+  usedIn:
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - ProjectArticle
+- name: client_id
+  type: string
+  usedIn:
+  - CreateOAuthToken
+- name: client_secret
+  type: string
+  usedIn:
+  - CreateOAuthToken
+- name: code
+  description: Required if grant_type is 'authorization_code'
+  type: string
+  usedIn:
+  - CreateOAuthToken
+  - ErrorMessage
+- name: collaborators
+  description: List of project collaborators
+  type: array
+  usedIn:
+  - ProjectComplete
+  - ProjectCompletePrivate
+- name: comment
+  description: Text sent when inviting the user to the project
+  type: string
+  usedIn:
+  - ProjectCollaboratorInvite
+- name: comments_count
+  description: The number of comments in the review.
+  type: integer
+  usedIn:
+  - Curation
+- name: computed_md5
+  description: File computed md5
+  type: string
+  usedIn:
+  - PublicFile
+- name: confidential_reason
+  description: Confidentiality reason
+  type: string
+  usedIn:
+  - ProjectArticle
+- name: created_date
+  description: Date when account was created
+  type: string
+  usedIn:
+  - Account
+  - AccountReport
+  - Article
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - Curation
+  - CurationComment
+  - Project
+  - ProjectArticle
+  - ProjectComplete
+  - ProjectCompletePrivate
+  - ProjectNote
+- name: curation_status
+  description: Curation status of the article
+  type: string
+  usedIn:
+  - ArticleCompletePrivate
+  - PrivateProjectArticle
+- name: custom_domain
+  description: Custom domain for the institution
+  type: string
+  usedIn:
+  - AltmetricInstitution
+- name: custom_fields
+  description: List of custom fields values
+  type: array
+  usedIn:
+  - ArticleComplete
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - PrivateProjectArticle
+  - ProjectComplete
+  - ProjectCompletePrivate
+  - ProjectCreate
+  - ProjectUpdate
+- name: custom_fields_list
+  description: List of custom fields values, supersedes custom_fields parameter
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectCreate
+  - ProjectUpdate
+- name: defined_type
+  description: Type of article identifier
+  type: integer
+  usedIn:
+  - Article
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+- name: defined_type_name
+  description: Name of the article type identifier
+  type: string
+  usedIn:
+  - Article
+- name: description
+  description: The article description. In a publisher case, usually this is the remote
+    article description
+  type: string
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectArticle
+  - ProjectComplete
+  - ProjectCompletePrivate
+  - ProjectCreate
+  - ProjectUpdate
+  - Role
+- name: doi
+  description: DOI
+  type: string
+  usedIn:
+  - Article
+  - ArticleCreate
+  - ArticleDOI
+  - ArticleProjectCreate
+  - ArticleSearch
+  - ArticleUpdate
+  - Collection
+  - CollectionCreate
+  - CollectionDOI
+  - CollectionSearch
+  - CollectionUpdate
+  - Resource
+- name: download_disabled
+  description: If true, downloading of files for this article is disabled
+  type: boolean
+  usedIn:
+  - ArticleComplete
+  - ArticleUpdate
+  - PrivateProjectArticle
+- name: download_url
+  description: The download link for the generated XLSX
+  type: string
+  usedIn:
+  - AccountReport
+  - PublicFile
+- name: email
+  description: User email
+  type: string
+  usedIn:
+  - Account
+  - AccountCreate
+  - InstitutionAccountsSearch
+  - ProjectCollaboratorInvite
+  - ShortAccount
+- name: embargo_date
+  description: Date when the embargo expires and the article gets published, '0' value
+    will set up permanent embargo
+  type: string
+  usedIn:
+  - ArticleEmbargoUpdater
+- name: embargo_options
+  description: List of embargo options
+  type: array
+  usedIn:
+  - ArticleComplete
+  - ArticleEmbargo
+  - ArticleEmbargoUpdater
+  - PrivateProjectArticle
+- name: embargo_reason
+  description: Reason for embargo
+  type: string
+  usedIn:
+  - ArticleEmbargo
+  - ArticleEmbargoUpdater
+  - ProjectArticle
+- name: embargo_title
+  description: Title for embargo
+  type: string
+  usedIn:
+  - ArticleEmbargo
+  - ArticleEmbargoUpdater
+  - ProjectArticle
+- name: embargo_type
+  description: 'Embargo can be enabled at the article or the file level. Possible
+    values: article, file'
+  type: string
+  usedIn:
+  - ArticleEmbargoUpdater
+- name: endOffset
+  description: Indexes on byte range. zero-based and inclusive
+  type: integer
+  usedIn:
+  - UploadFilePart
+- name: entity_id
+  description: Figshare ID of the entity
+  type: integer
+  usedIn:
+  - CreateProjectResponse
+  - LocationWarnings
+- name: expires_date
+  description: Date when this private link should expire - optional. By default private
+    links expire in 365 days.
+  type: string
+  usedIn:
+  - CollectionPrivateLinkCreator
+  - PrivateLink
+  - PrivateLinkCreator
+- name: expires_in
+  description: Token expiration time in seconds
+  type: integer
+  usedIn:
+  - OAuthToken
+- name: facebook
+  description: User facebook URL
+  type: string
+  usedIn:
+  - ProfileUpdateData
+- name: field_type
+  description: Custom field type
+  type: string
+  usedIn:
+  - CustomArticleField
+  - ShortCustomField
+- name: fields_of_interest
+  description: User fields of interest (category ids)
+  type: array
+  usedIn:
+  - ProfileUpdateData
+- name: fields_of_interest_by_source_id
+  description: User fields of interest (category source IDs), supersedes the fields_of_interest
+    property
+  type: array
+  usedIn:
+  - ProfileUpdateData
+- name: figshare_url
+  description: Article public url
+  type: string
+  usedIn:
+  - ArticleComplete
+  - PrivateProjectArticle
+- name: file_id
+  description: File ID
+  type: integer
+  usedIn:
+  - FileId
+- name: files
+  description: List of up to 10 article files.
+  type: array
+  usedIn:
+  - ArticleComplete
+  - PrivateProjectArticle
+- name: firstOnline
+  description: Online posted date
+  type: string
+  usedIn:
+  - TimelineUpdate
+- name: first_name
+  description: First Name
+  type: string
+  usedIn:
+  - Account
+  - AccountCreate
+  - Author
+  - AuthorComplete
+  - ProfileUpdateData
+  - ShortAccount
+  - User
+- name: folder_path
+  description: Unix-style directory path of the file; only available if the file was
+    uploaded within a folder structure
+  type: string
+  usedIn:
+  - FileCreator
+- name: folder_structure
+  description: Mapping of file ids to folder paths, if folders are used
+  type: object
+  usedIn:
+  - ArticleComplete
+- name: full_name
+  description: Author full name
+  type: string
+  usedIn:
+  - Author
+- name: funder_name
+  description: Funder's name
+  type: string
+  usedIn:
+  - FundingInformation
+- name: funding
+  description: Grant number or funding authority
+  type: string
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - CollectionVersions
+  - ProjectArticle
+  - ProjectComplete
+  - ProjectCompletePrivate
+  - ProjectCreate
+  - ProjectUpdate
+- name: funding_list
+  description: Funding creation / update items
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectArticle
+  - ProjectComplete
+  - ProjectCompletePrivate
+  - ProjectCreate
+  - ProjectUpdate
+- name: grant_code
+  description: The grant code
+  type: string
+  usedIn:
+  - FundingInformation
+- name: grant_type
+  type: string
+  usedIn:
+  - CreateOAuthToken
+- name: group
+  description: only return collections from this group
+  type: integer
+  usedIn:
+  - CommonSearch
+- name: group_id
+  description: Account group id
+  type: integer
+  usedIn:
+  - Account
+  - AccountCreate
+  - AccountReport
+  - AccountUpdate
+  - ArticleCreate
+  - ArticleUpdate
+  - AuthorComplete
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - Curation
+  - PrivateAuthorsSearch
+  - ProjectCompletePrivate
+  - ProjectCreate
+- name: handle
+  description: Handle
+  type: string
+  usedIn:
+  - Article
+  - ArticleCreate
+  - ArticleHandle
+  - ArticleProjectCreate
+  - ArticleSearch
+  - ArticleUpdate
+  - Collection
+  - CollectionCreate
+  - CollectionHandle
+  - CollectionSearch
+  - CollectionUpdate
+- name: has_children
+  description: True if category has children
+  type: boolean
+  usedIn:
+  - CategoryList
+- name: has_linked_file
+  description: True if any files are linked to the article
+  type: boolean
+  usedIn:
+  - ProjectArticle
+- name: html_location
+  description: HTML url for private link
+  type: string
+  usedIn:
+  - PrivateLink
+  - PrivateLinkResponse
+- name: icon
+  description: The string identifying the icon of the item type.
+  type: string
+  usedIn:
+  - ItemType
+- name: id
+  description: Account id
+  type: integer
+  usedIn:
+  - Account
+  - AccountReport
+  - Article
+  - Author
+  - Category
+  - Collection
+  - Curation
+  - CurationComment
+  - FundingCreate
+  - FundingInformation
+  - Group
+  - GroupEmbargoOptions
+  - Institution
+  - ItemType
+  - PrivateLink
+  - Project
+  - ProjectNote
+  - PublicFile
+  - RelatedMaterial
+  - Resource
+  - Role
+  - ShortAccount
+  - ShortCustomField
+  - User
+  - AltmetricInstitution
+- name: identifier
+  description: The related material identifier (e.g., DOI, Handle, ISBN). Mandatory
+    if creating a new material.
+  type: string
+  usedIn:
+  - RelatedMaterial
+- name: identifier_type
+  description: The type of the identifier of the related material; defaults to 'URL'.
+    Mandatory if creating a new material.
+  type: string
+  usedIn:
+  - RelatedMaterial
+- name: institution
+  description: only return collections from this institution
+  type: integer
+  usedIn:
+  - CommonSearch
+- name: institution_id
+  description: Account institution
+  type: integer
+  usedIn:
+  - Account
+  - AuthorComplete
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - PrivateAuthorsSearch
+  - ShortAccount
+- name: institution_user_id
+  description: Account institution user id
+  type: string
+  usedIn:
+  - Account
+  - AccountCreate
+  - InstitutionAccountsSearch
+  - ShortAccount
+- name: internal_metadata
+  description: List of supplementary fields to be associated with the article version
+  type: object
+  usedIn:
+  - ArticleVersionUpdate
+- name: ip_name
+  description: IP range name; value appears if type is ip_range
+  type: string
+  usedIn:
+  - GroupEmbargoOptions
+- name: is_active
+  description: Is account active
+  type: boolean
+  usedIn:
+  - AccountCreate
+  - AccountUpdate
+  - Author
+  - InstitutionAccountsSearch
+  - PrivateAuthorsSearch
+  - PrivateLink
+  - User
+- name: is_attached_to_public_version
+  description: True if the file is attached to a public item version
+  type: boolean
+  usedIn:
+  - PrivateFile
+- name: is_confidential
+  description: True if article is confidential
+  type: boolean
+  usedIn:
+  - ArticleConfidentiality
+  - ProjectArticle
+- name: is_embargoed
+  description: True if embargoed
+  type: boolean
+  usedIn:
+  - ArticleEmbargo
+  - ArticleEmbargoUpdater
+  - ProjectArticle
+- name: is_link_only
+  description: True if file is hosted somewhere else
+  type: boolean
+  usedIn:
+  - PublicFile
+- name: is_linkout
+  description: Flag for highlighting this related material in the call-out box
+  type: boolean
+  usedIn:
+  - RelatedMaterial
+- name: is_mandatory
+  description: Whether the field is mandatory or not
+  type: boolean
+  usedIn:
+  - CustomArticleField
+  - ShortCustomField
+- name: is_metadata_record
+  description: True if article has no files
+  type: boolean
+  usedIn:
+  - ArticleCreate
+  - ArticleUpdate
+  - ProjectArticle
+- name: is_public
+  description: if 1 then the author has published items
+  type: integer
+  usedIn:
+  - AuthorComplete
+  - PrivateAuthorsSearch
+  - ProjectArticle
+  - User
+- name: is_selectable
+  description: The selectable status
+  type: boolean
+  usedIn:
+  - CategoryList
+  - ItemType
+- name: is_user_defined
+  description: Return 1 whether the grant has been introduced manually, 0 otherwise
+  type: integer
+  usedIn:
+  - FundingInformation
+- name: item
+  type: string
+  usedIn:
+  - CurationDetail
+- name: item_type
+  description: 'Only return articles with the respective type. Mapping for item_type
+    is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution,
+    7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint,
+    13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 -
+    Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding,
+    22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph,
+    26 - Performance, 27 - Event, 28 - Service, 29 - Model'
+  type: integer
+  usedIn:
+  - ArticleSearch
+- name: job_title
+  description: Job title
+  type: string
+  usedIn:
+  - AuthorComplete
+  - ProfileUpdateData
+  - User
+- name: keywords
+  description: List of tags to be associated with the article. Tags can be used instead
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectArticle
+- name: last_name
+  description: Last Name
+  type: string
+  usedIn:
+  - Account
+  - AccountCreate
+  - Author
+  - AuthorComplete
+  - ProfileUpdateData
+  - ShortAccount
+  - User
+- name: license
+  description: License id for this article.
+  type: integer
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - ProjectArticle
+- name: limit
+  description: Number of results included on a page. Used for pagination with query
+  type: integer
+  usedIn:
+  - CommonSearch
+  - InstitutionAccountsSearch
+  - PrivateAuthorsSearch
+- name: link
+  description: Url for an existing file that will not be uploaded to Figshare
+  type: string
+  usedIn:
+  - FileCreator
+  - RelatedMaterial
+  - Resource
+- name: linkedin
+  description: User linkedin URL
+  type: string
+  usedIn:
+  - ProfileUpdateData
+- name: location
+  description: Url for entity
+  type: string
+  usedIn:
+  - CreateProjectResponse
+  - Location
+  - LocationWarnings
+  - LocationWarningsUpdate
+  - PrivateLinkResponse
+  - ProfileUpdateData
+- name: locked
+  description: When a part is being uploaded it is being locked, by setting the locked
+    flag to true. No changes/uploads can happen on this part from other requests.
+  type: boolean
+  usedIn:
+  - UploadFilePart
+- name: maximum_file_size
+  description: Maximum upload size for account
+  type: integer
+  usedIn:
+  - Account
+- name: md5
+  description: MD5 sum pre-computed on client side.
+  type: string
+  usedIn:
+  - FileCreator
+  - UploadInfo
+- name: message
+  description: A human friendly message explaining the error.
+  type: string
+  usedIn:
+  - ErrorMessage
+  - ResponseMessage
+- name: metadata_reason
+  description: Article metadata reason
+  type: string
+  usedIn:
+  - ArticleCreate
+  - ArticleUpdate
+  - ProjectArticle
+- name: mimetype
+  description: MIME Type of the file, it defaults to an empty string
+  type: string
+  usedIn:
+  - PublicFile
+- name: modified_date
+  description: Date of last account modification
+  type: string
+  usedIn:
+  - Account
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - Curation
+  - CurationComment
+  - Project
+  - ProjectComplete
+  - ProjectCompletePrivate
+  - ProjectNote
+- name: modified_since
+  description: Filter by article modified date. Will only return articles modified
+    after the date. date(ISO 8601) YYYY-MM-DD or date-time(ISO 8601) YYYY-MM-DDTHH:mm:ssZ
+  type: string
+  usedIn:
+  - CommonSearch
+- name: name
+  description: Collaborator name
+  type: string
+  usedIn:
+  - Collaborator
+  - CustomArticleField
+  - CustomArticleFieldAdd
+  - FileCreator
+  - Group
+  - Institution
+  - ItemType
+  - License
+  - ProjectCollaborator
+  - PublicFile
+  - Role
+  - ShortCustomField
+  - UploadInfo
+  - User
+  - AltmetricInstitution
+- name: offset
+  description: Where to start the listing (the offset of the first result). Used for
+    pagination with limit
+  type: integer
+  usedIn:
+  - CommonSearch
+  - InstitutionAccountsSearch
+  - PrivateAuthorsSearch
+- name: orcid
+  description: Orcid of author
+  type: string
+  usedIn:
+  - PrivateAuthorsSearch
+  - ProfileUpdateData
+- name: orcid_id
+  description: ORCID iD associated to account
+  type: string
+  usedIn:
+  - Account
+  - Author
+  - ShortAccount
+  - User
+- name: order
+  description: The field by which to order
+  type: string
+  usedIn:
+  - ArticleSearch
+  - CollectionSearch
+  - CustomArticleField
+  - ProjectsSearch
+  - ShortCustomField
+- name: order_direction
+  description: Direction of ordering
+  type: string
+  usedIn:
+  - CommonSearch
+- name: page
+  description: Page number. Used for pagination with page_size
+  type: integer
+  usedIn:
+  - CommonSearch
+  - InstitutionAccountsSearch
+  - PrivateAuthorsSearch
+- name: page_size
+  description: The number of results included on a page. Used for pagination with
+    page
+  type: integer
+  usedIn:
+  - CommonSearch
+  - InstitutionAccountsSearch
+  - PrivateAuthorsSearch
+- name: parent_id
+  description: Parent category
+  type: integer
+  usedIn:
+  - Category
+  - Group
+- name: partNo
+  description: File part id
+  type: integer
+  usedIn:
+  - UploadFilePart
+- name: parts
+  description: Uploads parts
+  type: array
+  usedIn:
+  - UploadInfo
+- name: password
+  description: Required if grant_type is 'password'
+  type: string
+  usedIn:
+  - CreateOAuthToken
+- name: path
+  description: Path to all ancestor ids
+  type: string
+  usedIn:
+  - Category
+- name: pending_quota_request
+  description: True if a quota request is pending
+  type: boolean
+  usedIn:
+  - Account
+- name: personal_profiles
+  description: Add up to 10 additional personal profile links
+  type: array
+  usedIn:
+  - ProfileUpdateData
+- name: preview_state
+  description: File preview state
+  type: string
+  usedIn:
+  - PrivateFile
+- name: project_id
+  description: Only return articles in this project
+  type: integer
+  usedIn:
+  - ArticleSearch
+  - ArticleWithProject
+- name: public
+  description: True if collection is published
+  type: boolean
+  usedIn:
+  - CollectionComplete
+  - CollectionCompletePrivate
+- name: public_description
+  description: The description of the item type.
+  type: string
+  usedIn:
+  - ItemType
+- name: published_since
+  description: Filter by article publishing date. Will only return articles published
+    after the date. date(ISO 8601) YYYY-MM-DD or date-time(ISO 8601) YYYY-MM-DDTHH:mm:ssZ
+  type: string
+  usedIn:
+  - CommonSearch
+- name: publisherAcceptance
+  description: Date when the item was accepted for publication
+  type: string
+  usedIn:
+  - TimelineUpdate
+- name: publisherPublication
+  description: Publish date
+  type: string
+  usedIn:
+  - TimelineUpdate
+- name: quota
+  description: Account quota
+  type: integer
+  usedIn:
+  - Account
+  - AccountCreate
+  - ProjectCompletePrivate
+  - ShortAccount
+- name: reason
+  description: Reason for confidentiality
+  type: string
+  usedIn:
+  - ArticleConfidentiality
+  - ArticleUnpublishData
+  - ConfidentialityCreator
+- name: references
+  description: List of links to be associated with the article (e.g ["http://link1",
+    "http://link2", "http://link3"])
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectArticle
+- name: refresh_token
+  description: Required if grant_type is 'refresh_token'
+  type: string
+  usedIn:
+  - CreateOAuthToken
+  - OAuthToken
+- name: related_materials
+  description: List of related materials; supersedes references and resource DOI/title.
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectArticle
+- name: relation
+  description: The relation between the item and the related material; defaults to
+    'References'. Mandatory if creating a new material.
+  type: string
+  usedIn:
+  - RelatedMaterial
+- name: request_number
+  description: The request number of the review.
+  type: integer
+  usedIn:
+  - Curation
+- name: resolution_comment
+  description: The resolution comment of the review.
+  type: string
+  usedIn:
+  - Curation
+- name: resource_doi
+  description: Deprecated by related materials. Not applicable to regular users. In
+    a publisher case, this is the publisher article DOI.
+  type: string
+  usedIn:
+  - Article
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleSearch
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionSearch
+  - CollectionUpdate
+- name: resource_id
+  description: Collection resource id
+  type: string
+  usedIn:
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - Group
+  - PrivateArticleSearch
+  - PrivateCollectionSearch
+- name: resource_link
+  description: Collection resource link
+  type: string
+  usedIn:
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+- name: resource_title
+  description: Deprecated by related materials. Not applicable to regular users. In
+    a publisher case, this is the publisher article title.
+  type: string
+  usedIn:
+  - Article
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+- name: resource_version
+  description: Collection resource version
+  type: integer
+  usedIn:
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+- name: role
+  description: Role inside this project
+  type: string
+  usedIn:
+  - ProjectPrivate
+- name: role_name
+  description: Collaborator role
+  type: string
+  usedIn:
+  - Collaborator
+  - ProjectCollaborator
+  - ProjectCollaboratorInvite
+- name: scope
+  description: The scope of the access token
+  type: string
+  usedIn:
+  - OAuthToken
+- name: search_for
+  description: Search term
+  type: string
+  usedIn:
+  - CommonSearch
+  - FundingSearch
+  - InstitutionAccountsSearch
+  - PrivateAuthorsSearch
+- name: settings
+  description: Settings for the custom field
+  type: object
+  usedIn:
+  - CustomArticleField
+  - ShortCustomField
+- name: size
+  description: File size in bytes; can be omitted only for linked files.
+  type: integer
+  usedIn:
+  - FileCreator
+  - ProjectArticle
+  - PublicFile
+  - UploadInfo
+- name: source_id
+  description: ID in original standard taxonomy
+  type: string
+  usedIn:
+  - Category
+- name: startOffset
+  description: Indexes on byte range. zero-based and inclusive
+  type: integer
+  usedIn:
+  - UploadFilePart
+- name: status
+  description: Status of the report
+  type: string
+  usedIn:
+  - AccountReport
+  - Curation
+  - ProjectArticle
+  - ProjectCollaborator
+  - Resource
+  - UploadFilePart
+  - UploadInfo
+- name: storage
+  description: Project storage type
+  type: string
+  usedIn:
+  - ProjectPrivate
+- name: string_id
+  description: The string identifier of the item type.
+  type: string
+  usedIn:
+  - ItemType
+- name: supplementary_fields
+  description: List of supplementary fields to be associated with the article version
+  type: array
+  usedIn:
+  - ArticleVersionUpdate
+- name: supplied_md5
+  description: File supplied md5
+  type: string
+  usedIn:
+  - PublicFile
+- name: symplectic_user_id
+  description: Symplectic ID associated to account
+  type: string
+  usedIn:
+  - Account
+  - AccountCreate
+  - ShortAccount
+- name: tags
+  description: List of tags to be associated with the article. Keywords can be used
+    instead
+  type: array
+  usedIn:
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+  - ProjectArticle
+- name: taxonomy_id
+  description: Internal id of taxonomy the category is part of
+  type: integer
+  usedIn:
+  - Category
+- name: text
+  description: The value/content of the comment.
+  type: string
+  usedIn:
+  - CurationComment
+  - CurationCommentCreate
+  - ProjectNoteCreate
+  - ProjectNotePrivate
+- name: thumb
+  description: Thumbnail image
+  type: string
+  usedIn:
+  - Article
+- name: timeline
+  type: string
+  usedIn:
+  - Article
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - Collection
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionCreate
+  - CollectionUpdate
+- name: title
+  description: Title of article
+  type: string
+  usedIn:
+  - Article
+  - ArticleCreate
+  - ArticleProjectCreate
+  - ArticleUpdate
+  - Category
+  - Collection
+  - CollectionCreate
+  - CollectionUpdate
+  - FundingCreate
+  - FundingInformation
+  - Project
+  - ProjectCreate
+  - ProjectUpdate
+  - RelatedMaterial
+  - Resource
+- name: token
+  description: The OAuth access token
+  type: string
+  usedIn:
+  - OAuthToken
+  - PrivateLinkResponse
+  - UploadInfo
+- name: token_type
+  description: The type of token issued
+  type: string
+  usedIn:
+  - OAuthToken
+- name: type
+  description: The ID of the account which generated this comment.
+  type: string
+  usedIn:
+  - CurationComment
+  - GroupEmbargoOptions
+- name: upload_token
+  description: Token for file upload
+  type: string
+  usedIn:
+  - PrivateFile
+- name: upload_url
+  description: Upload url for file
+  type: string
+  usedIn:
+  - PrivateFile
+- name: url
+  description: Api endpoint for article
+  type: string
+  usedIn:
+  - Article
+  - ArticleVersions
+  - Collection
+  - CollectionVersions
+  - FundingInformation
+  - License
+  - Project
+- name: url_name
+  description: Author url name
+  type: string
+  usedIn:
+  - Author
+  - ItemType
+  - User
+- name: url_private_api
+  description: Private Api endpoint for article
+  type: string
+  usedIn:
+  - Article
+- name: url_private_html
+  description: Private site endpoint for article
+  type: string
+  usedIn:
+  - Article
+- name: url_public_api
+  description: Public Api endpoint for article
+  type: string
+  usedIn:
+  - Article
+- name: url_public_html
+  description: Public site endpoint for article
+  type: string
+  usedIn:
+  - Article
+- name: used_quota
+  description: Account total used quota
+  type: integer
+  usedIn:
+  - Account
+  - ProjectCompletePrivate
+  - ShortAccount
+- name: used_quota_private
+  description: Account used private quota
+  type: integer
+  usedIn:
+  - Account
+  - ProjectCompletePrivate
+- name: used_quota_public
+  description: Account public used quota
+  type: integer
+  usedIn:
+  - Account
+  - ProjectCompletePrivate
+- name: user_id
+  description: User id associated with account, useful for example for adding the
+    account as an author to an item
+  type: integer
+  usedIn:
+  - Account
+  - Collaborator
+  - ProjectCollaborator
+  - ProjectCollaboratorInvite
+  - ProjectNote
+  - ShortAccount
+- name: user_name
+  description: Username of the one who wrote the note
+  type: string
+  usedIn:
+  - ProjectNote
+- name: username
+  description: Required if grant_type is 'password'
+  type: string
+  usedIn:
+  - CreateOAuthToken
+- name: value
+  description: Custom metadata value (can be either a string or an array of strings)
+  type: object
+  usedIn:
+  - CustomArticleField
+  - CustomArticleFieldAdd
+  - License
+- name: version
+  description: Version number
+  type: integer
+  usedIn:
+  - ArticleVersions
+  - CollectionComplete
+  - CollectionCompletePrivate
+  - CollectionVersions
+  - Curation
+  - ProjectArticle
+  - Resource
+- name: viewer_type
+  description: File viewer type
+  type: string
+  usedIn:
+  - PrivateFile
+- name: warnings
+  description: Issues encountered during the operation
+  type: array
+  usedIn:
+  - LocationWarnings
+  - LocationWarningsUpdate
+- name: x
+  description: User X (twitter) URL
+  type: string
+  usedIn:
+  - ProfileUpdateData
