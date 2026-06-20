@@ -10,7 +10,7 @@ description: >-
   and supports both individual researchers with a free 20GB tier and institutional deployments
   with custom storage configurations up to multiple terabytes.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Research Data
   - Data Repository
@@ -32,7 +32,7 @@ apis:
       public and private article management, file uploads (standard and S3-based), collections,
       projects, authors, licenses, funding, statistics, search, OAI-PMH harvesting, and
       institutional administration endpoints. Authentication is via OAuth 2.0 or personal tokens.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://docs.figshare.com/
     baseURL: https://api.figshare.com/v2
     tags:
