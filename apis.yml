@@ -66,13 +66,13 @@ apis:
         url: json-schema/figshare-license-schema.json
       - type: JSONSchema
         url: json-schema/figshare-fundinginformation-schema.json
-      - type: Example
+      - type: Examples
         url: examples/figshare-article-example.json
-      - type: Example
+      - type: Examples
         url: examples/figshare-collection-example.json
-      - type: Example
+      - type: Examples
         url: examples/figshare-project-example.json
-      - type: Example
+      - type: Examples
         url: examples/figshare-file_upload-example.json
 common:
   - type: Website
@@ -107,7 +107,7 @@ common:
     url: json-ld/figshare-context.jsonld
   - type: BlogRSS
     url: https://info.figshare.com/blog/feed/
-  - type: Blogs
+  - type: Blog
     url: blogs/blogs.json
 maintainers:
   - FN: Kin Lane
