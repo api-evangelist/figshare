@@ -75,6 +75,10 @@ apis:
       - type: Examples
         url: examples/figshare-file_upload-example.json
 common:
+  - type: DomainSecurity
+    url: security/figshare-domain-security.yml
+  - type: Authentication
+    url: authentication/figshare-authentication.yml
   - type: OAuthScopes
     url: scopes/figshare-scopes.yml
   - type: Website
