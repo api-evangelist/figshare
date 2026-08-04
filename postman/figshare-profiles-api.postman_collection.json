@@ -1,0 +1,832 @@
+{
+  "info": {
+    "_postman_id": "e05e0a5f-ee58-47e8-8655-d7f0fa12d086",
+    "name": "Figshare altmetric profiles API",
+    "description": "Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.\n\nContact Support:\n Name: Figshare Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:37:53.000Z",
+    "updatedAt": "2026-07-28T01:37:54.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e05e0a5f-ee58-47e8-8655-d7f0fa12d086"
+  },
+  "item": [
+    {
+      "name": "account",
+      "item": [
+        {
+          "name": "profile",
+          "item": [
+            {
+              "name": "{user_id}",
+              "item": [
+                {
+                  "name": "picture",
+                  "item": [
+                    {
+                      "name": "Update public profile picture",
+                      "id": "663b5e4d-a5e0-4e73-8bdc-13252fdb19f4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "auth": {
+                          "type": "oauth2",
+                          "oauth2": [
+                            {
+                              "key": "scope",
+                              "value": "all",
+                              "type": "string"
+                            },
+                            {
+                              "key": "accessTokenUrl",
+                              "value": "https://api.figshare.com/v2/token",
+                              "type": "string"
+                            },
+                            {
+                              "key": "authUrl",
+                              "value": "https://figshare.com/account/applications/authorize",
+                              "type": "string"
+                            },
+                            {
+                              "key": "grant_type",
+                              "value": "authorization_code",
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "multipart/form-data"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "formdata",
+                          "formdata": [
+                            {
+                              "description": "(Required) User profile picture",
+                              "key": "profile_picture",
+                              "type": "file",
+                              "value": null
+                            }
+                          ]
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/profile/:user_id/picture",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "profile",
+                            ":user_id",
+                            "picture"
+                          ],
+                          "variable": [
+                            {
+                              "id": "2934f603-143e-4eae-b8ea-9ca74c11c268",
+                              "key": "user_id",
+                              "value": "<integer>",
+                              "description": "(Required) User ID"
+                            }
+                          ]
+                        },
+                        "description": "Updates the profile picture of the user's public profile."
+                      },
+                      "response": [
+                        {
+                          "id": "dda7bd85-8ee0-438b-8f43-ad16af3b24c8",
+                          "name": "OK",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "formdata",
+                              "formdata": [
+                                {
+                                  "description": "(Required) User profile picture",
+                                  "key": "profile_picture",
+                                  "type": "file"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/account/profile/:user_id/picture",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "account",
+                                "profile",
+                                ":user_id",
+                                "picture"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "user_id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{}",
+                          "createdAt": "2026-07-28T01:37:54.000Z",
+                          "updatedAt": "2026-07-28T01:37:54.000Z",
+                          "uid": "35240-dda7bd85-8ee0-438b-8f43-ad16af3b24c8"
+                        },
+                        {
+                          "id": "df85783f-2ea3-4f6b-b56e-fe1f52cd35d3",
+                          "name": "Bad Request",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "formdata",
+                              "formdata": [
+                                {
+                                  "description": "(Required) User profile picture",
+                                  "key": "profile_picture",
+                                  "type": "file"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/account/profile/:user_id/picture",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "account",
+                                "profile",
+                                ":user_id",
+                                "picture"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "user_id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Bad Request",
+                          "code": 400,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:37:54.000Z",
+                          "updatedAt": "2026-07-28T01:37:54.000Z",
+                          "uid": "35240-df85783f-2ea3-4f6b-b56e-fe1f52cd35d3"
+                        },
+                        {
+                          "id": "42a0d850-78c7-438b-bab3-4441e314111a",
+                          "name": "Forbidden",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "formdata",
+                              "formdata": [
+                                {
+                                  "description": "(Required) User profile picture",
+                                  "key": "profile_picture",
+                                  "type": "file"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/account/profile/:user_id/picture",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "account",
+                                "profile",
+                                ":user_id",
+                                "picture"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "user_id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Forbidden",
+                          "code": 403,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                          "createdAt": "2026-07-28T01:37:54.000Z",
+                          "updatedAt": "2026-07-28T01:37:54.000Z",
+                          "uid": "35240-42a0d850-78c7-438b-bab3-4441e314111a"
+                        },
+                        {
+                          "id": "3902ac27-b094-427b-97e6-493a4aaf586c",
+                          "name": "Not Found",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "formdata",
+                              "formdata": [
+                                {
+                                  "description": "(Required) User profile picture",
+                                  "key": "profile_picture",
+                                  "type": "file"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/account/profile/:user_id/picture",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "account",
+                                "profile",
+                                ":user_id",
+                                "picture"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "user_id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Not Found",
+                          "code": 404,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:37:54.000Z",
+                          "updatedAt": "2026-07-28T01:37:54.000Z",
+                          "uid": "35240-3902ac27-b094-427b-97e6-493a4aaf586c"
+                        },
+                        {
+                          "id": "b16956be-c8fb-426a-af6a-58c15fc77d3a",
+                          "name": "Internal Server Error",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "multipart/form-data"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "formdata",
+                              "formdata": [
+                                {
+                                  "description": "(Required) User profile picture",
+                                  "key": "profile_picture",
+                                  "type": "file"
+                                }
+                              ]
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/account/profile/:user_id/picture",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "account",
+                                "profile",
+                                ":user_id",
+                                "picture"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "user_id"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Internal Server Error",
+                          "code": 500,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:37:54.000Z",
+                          "updatedAt": "2026-07-28T01:37:54.000Z",
+                          "uid": "35240-b16956be-c8fb-426a-af6a-58c15fc77d3a"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:37:54.000Z",
+                      "updatedAt": "2026-07-28T01:37:54.000Z",
+                      "uid": "35240-663b5e4d-a5e0-4e73-8bdc-13252fdb19f4"
+                    }
+                  ],
+                  "id": "92917908-f804-497e-8411-fa96ab323e12",
+                  "createdAt": "2026-07-28T01:37:54.000Z",
+                  "updatedAt": "2026-07-28T01:37:54.000Z",
+                  "uid": "35240-92917908-f804-497e-8411-fa96ab323e12"
+                }
+              ],
+              "id": "45cf6900-aeb5-4c53-97a8-b084e1c9e3e3",
+              "createdAt": "2026-07-28T01:37:54.000Z",
+              "updatedAt": "2026-07-28T01:37:54.000Z",
+              "uid": "35240-45cf6900-aeb5-4c53-97a8-b084e1c9e3e3"
+            },
+            {
+              "name": "Update public profile",
+              "id": "fb5a890c-dd64-4295-86c5-7b586dde9360",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "all",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "https://api.figshare.com/v2/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "https://figshare.com/account/applications/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PUT",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"orcid\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"fields_of_interest\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fields_of_interest_by_source_id\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"location\": \"<string>\",\n  \"facebook\": \"<string>\",\n  \"x\": \"<string>\",\n  \"linkedin\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"personal_profiles\": [\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/account/profile?user_id=<integer>&institution_user_id=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "account",
+                    "profile"
+                  ],
+                  "query": [
+                    {
+                      "description": "User ID",
+                      "key": "user_id",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Institutional user ID",
+                      "key": "institution_user_id",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "description": "Updates the fields of the user's public profile."
+              },
+              "response": [
+                {
+                  "id": "1ec95d50-a735-4082-b175-b1c7102a9834",
+                  "name": "OK",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"orcid\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"fields_of_interest\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fields_of_interest_by_source_id\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"location\": \"<string>\",\n  \"facebook\": \"<string>\",\n  \"x\": \"<string>\",\n  \"linkedin\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"personal_profiles\": [\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/account/profile?user_id=<integer>&institution_user_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "profile"
+                      ],
+                      "query": [
+                        {
+                          "description": "User ID",
+                          "key": "user_id",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Institutional user ID",
+                          "key": "institution_user_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{}",
+                  "createdAt": "2026-07-28T01:37:54.000Z",
+                  "updatedAt": "2026-07-28T01:37:54.000Z",
+                  "uid": "35240-1ec95d50-a735-4082-b175-b1c7102a9834"
+                },
+                {
+                  "id": "85ae2205-617e-4b54-86e0-4f8dc4294823",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"orcid\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"fields_of_interest\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fields_of_interest_by_source_id\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"location\": \"<string>\",\n  \"facebook\": \"<string>\",\n  \"x\": \"<string>\",\n  \"linkedin\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"personal_profiles\": [\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/account/profile?user_id=<integer>&institution_user_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "profile"
+                      ],
+                      "query": [
+                        {
+                          "description": "User ID",
+                          "key": "user_id",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Institutional user ID",
+                          "key": "institution_user_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:37:54.000Z",
+                  "updatedAt": "2026-07-28T01:37:54.000Z",
+                  "uid": "35240-85ae2205-617e-4b54-86e0-4f8dc4294823"
+                },
+                {
+                  "id": "ce0f474f-9c40-418a-99c5-6c6c03d2d1b5",
+                  "name": "Forbidden",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"orcid\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"fields_of_interest\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fields_of_interest_by_source_id\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"location\": \"<string>\",\n  \"facebook\": \"<string>\",\n  \"x\": \"<string>\",\n  \"linkedin\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"personal_profiles\": [\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/account/profile?user_id=<integer>&institution_user_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "profile"
+                      ],
+                      "query": [
+                        {
+                          "description": "User ID",
+                          "key": "user_id",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Institutional user ID",
+                          "key": "institution_user_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:37:54.000Z",
+                  "updatedAt": "2026-07-28T01:37:54.000Z",
+                  "uid": "35240-ce0f474f-9c40-418a-99c5-6c6c03d2d1b5"
+                },
+                {
+                  "id": "b59b3f53-cd92-44fd-9b66-b94c11dc267a",
+                  "name": "Not Found",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"orcid\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"fields_of_interest\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fields_of_interest_by_source_id\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"location\": \"<string>\",\n  \"facebook\": \"<string>\",\n  \"x\": \"<string>\",\n  \"linkedin\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"personal_profiles\": [\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/account/profile?user_id=<integer>&institution_user_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "profile"
+                      ],
+                      "query": [
+                        {
+                          "description": "User ID",
+                          "key": "user_id",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Institutional user ID",
+                          "key": "institution_user_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:37:54.000Z",
+                  "updatedAt": "2026-07-28T01:37:54.000Z",
+                  "uid": "35240-b59b3f53-cd92-44fd-9b66-b94c11dc267a"
+                },
+                {
+                  "id": "2c5eb39d-65e7-47e3-848b-17abfc314ce8",
+                  "name": "Internal Server Error",
+                  "originalRequest": {
+                    "method": "PUT",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"first_name\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"orcid\": \"<string>\",\n  \"job_title\": \"<string>\",\n  \"fields_of_interest\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fields_of_interest_by_source_id\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"location\": \"<string>\",\n  \"facebook\": \"<string>\",\n  \"x\": \"<string>\",\n  \"linkedin\": \"<string>\",\n  \"bio\": \"<string>\",\n  \"personal_profiles\": [\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    },\n    {\n      \"label\": \"<string>\",\n      \"url\": \"<string>\"\n    }\n  ]\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/account/profile?user_id=<integer>&institution_user_id=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "profile"
+                      ],
+                      "query": [
+                        {
+                          "description": "User ID",
+                          "key": "user_id",
+                          "value": "<integer>"
+                        },
+                        {
+                          "description": "Institutional user ID",
+                          "key": "institution_user_id",
+                          "value": "<string>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:37:54.000Z",
+                  "updatedAt": "2026-07-28T01:37:54.000Z",
+                  "uid": "35240-2c5eb39d-65e7-47e3-848b-17abfc314ce8"
+                }
+              ],
+              "createdAt": "2026-07-28T01:37:54.000Z",
+              "updatedAt": "2026-07-28T01:37:54.000Z",
+              "uid": "35240-fb5a890c-dd64-4295-86c5-7b586dde9360"
+            }
+          ],
+          "id": "b2d77e64-0637-4a16-b07a-b7e5dd441c9a",
+          "createdAt": "2026-07-28T01:37:54.000Z",
+          "updatedAt": "2026-07-28T01:37:54.000Z",
+          "uid": "35240-b2d77e64-0637-4a16-b07a-b7e5dd441c9a"
+        }
+      ],
+      "id": "a762cf1d-fed2-4cbd-9e5f-e37301551e0a",
+      "createdAt": "2026-07-28T01:37:54.000Z",
+      "updatedAt": "2026-07-28T01:37:54.000Z",
+      "uid": "35240-a762cf1d-fed2-4cbd-9e5f-e37301551e0a"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.figshare.com/v2"
+    }
+  ]
+}

@@ -1,0 +1,626 @@
+{
+  "info": {
+    "_postman_id": "12f742a1-9f06-456a-8260-dcf1e40fff80",
+    "name": "Figshare altmetric authors API",
+    "description": "Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.\n\nContact Support:\n Name: Figshare Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:37:39.000Z",
+    "updatedAt": "2026-07-28T01:37:39.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-12f742a1-9f06-456a-8260-dcf1e40fff80"
+  },
+  "item": [
+    {
+      "name": "account",
+      "item": [
+        {
+          "name": "authors",
+          "item": [
+            {
+              "name": "search",
+              "item": [
+                {
+                  "name": "Search Authors",
+                  "id": "e1ca74cc-30b4-4e5c-a014-6fd4ee890419",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "all",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.figshare.com/v2/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "https://figshare.com/account/applications/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"search_for\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"page_size\": 10,\n  \"limit\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"institution_id\": \"<integer>\",\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/account/authors/search",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "authors",
+                        "search"
+                      ]
+                    },
+                    "description": "Search for authors"
+                  },
+                  "response": [
+                    {
+                      "id": "7e5d9eaf-7fac-4aa0-b8ed-d2c5422333bf",
+                      "name": "OK. An array of authors",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"page_size\": 10,\n  \"limit\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"institution_id\": \"<integer>\",\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"first_name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"group_id\": 70584735,\n    \"id\": \"<integer>\",\n    \"institution_id\": 33619665,\n    \"is_active\": \"<boolean>\",\n    \"is_public\": -8733688,\n    \"job_title\": \"dolor in exercitati\",\n    \"last_name\": \"<string>\",\n    \"orcid_id\": \"<string>\",\n    \"url_name\": \"<string>\"\n  },\n  {\n    \"first_name\": \"<string>\",\n    \"full_name\": \"<string>\",\n    \"group_id\": -24402364,\n    \"id\": \"<integer>\",\n    \"institution_id\": 26170348,\n    \"is_active\": \"<boolean>\",\n    \"is_public\": -26497820,\n    \"job_title\": \"commodo elit\",\n    \"last_name\": \"<string>\",\n    \"orcid_id\": \"<string>\",\n    \"url_name\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-7e5d9eaf-7fac-4aa0-b8ed-d2c5422333bf"
+                    },
+                    {
+                      "id": "a165facf-93d7-47d4-871e-ce3b2225057e",
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"page_size\": 10,\n  \"limit\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"institution_id\": \"<integer>\",\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-a165facf-93d7-47d4-871e-ce3b2225057e"
+                    },
+                    {
+                      "id": "1f2bf06a-f04c-4d3b-adb8-4878be166770",
+                      "name": "Forbidden",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"page_size\": 10,\n  \"limit\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"institution_id\": \"<integer>\",\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-1f2bf06a-f04c-4d3b-adb8-4878be166770"
+                    },
+                    {
+                      "id": "49ac35df-20ec-40ce-a8e2-816a78bbf996",
+                      "name": "Internal Server Error",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\",\n  \"page\": \"<integer>\",\n  \"page_size\": 10,\n  \"limit\": \"<integer>\",\n  \"offset\": \"<integer>\",\n  \"institution_id\": \"<integer>\",\n  \"orcid\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"is_active\": \"<boolean>\",\n  \"is_public\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-49ac35df-20ec-40ce-a8e2-816a78bbf996"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:37:39.000Z",
+                  "updatedAt": "2026-07-28T01:37:39.000Z",
+                  "uid": "35240-e1ca74cc-30b4-4e5c-a014-6fd4ee890419"
+                }
+              ],
+              "id": "e4e16513-884d-4b8a-bfb5-3e4b4509efa9",
+              "createdAt": "2026-07-28T01:37:39.000Z",
+              "updatedAt": "2026-07-28T01:37:39.000Z",
+              "uid": "35240-e4e16513-884d-4b8a-bfb5-3e4b4509efa9"
+            },
+            {
+              "name": "{author_id}",
+              "item": [
+                {
+                  "name": "Author details",
+                  "id": "6f6f6350-2a7e-4d6f-b655-cede32ecc961",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "all",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.figshare.com/v2/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "https://figshare.com/account/applications/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/account/authors/:author_id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "authors",
+                        ":author_id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "c8ff480b-652f-48bb-8903-1d8051596adb",
+                          "key": "author_id",
+                          "value": "<integer>",
+                          "description": "(Required) Author unique identifier"
+                        }
+                      ]
+                    },
+                    "description": "View author details"
+                  },
+                  "response": [
+                    {
+                      "id": "1c9860a6-0ebd-458f-9c41-072164aa826a",
+                      "name": "OK. Article representation",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/:author_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            ":author_id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "author_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"first_name\": \"<string>\",\n  \"full_name\": \"<string>\",\n  \"group_id\": 95065365,\n  \"id\": \"<integer>\",\n  \"institution_id\": -75129814,\n  \"is_active\": \"<boolean>\",\n  \"is_public\": -17109395,\n  \"job_title\": \"laboris amet nulla elit cupidatat\",\n  \"last_name\": \"<string>\",\n  \"orcid_id\": \"<string>\",\n  \"url_name\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-1c9860a6-0ebd-458f-9c41-072164aa826a"
+                    },
+                    {
+                      "id": "d286ffd0-6745-4dac-a0b5-b94eed4fd3e6",
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/:author_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            ":author_id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "author_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-d286ffd0-6745-4dac-a0b5-b94eed4fd3e6"
+                    },
+                    {
+                      "id": "b29c9a08-306c-460d-a5a3-999feb64707b",
+                      "name": "Forbidden",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/:author_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            ":author_id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "author_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-b29c9a08-306c-460d-a5a3-999feb64707b"
+                    },
+                    {
+                      "id": "3fddc557-8a7b-4543-82c7-d94780afd1e2",
+                      "name": "Not Found",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/:author_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            ":author_id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "author_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Not Found",
+                      "code": 404,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-3fddc557-8a7b-4543-82c7-d94780afd1e2"
+                    },
+                    {
+                      "id": "010cf30a-f59a-484f-bc89-cd46a8b7e664",
+                      "name": "Internal Server Error",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/account/authors/:author_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "authors",
+                            ":author_id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "author_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:39.000Z",
+                      "updatedAt": "2026-07-28T01:37:39.000Z",
+                      "uid": "35240-010cf30a-f59a-484f-bc89-cd46a8b7e664"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:37:39.000Z",
+                  "updatedAt": "2026-07-28T01:37:39.000Z",
+                  "uid": "35240-6f6f6350-2a7e-4d6f-b655-cede32ecc961"
+                }
+              ],
+              "id": "365c66e3-d1e7-4f15-b652-0f7bb97a516b",
+              "createdAt": "2026-07-28T01:37:39.000Z",
+              "updatedAt": "2026-07-28T01:37:39.000Z",
+              "uid": "35240-365c66e3-d1e7-4f15-b652-0f7bb97a516b"
+            }
+          ],
+          "id": "62a8644c-be88-4ccb-876c-106b3ea3f257",
+          "createdAt": "2026-07-28T01:37:39.000Z",
+          "updatedAt": "2026-07-28T01:37:39.000Z",
+          "uid": "35240-62a8644c-be88-4ccb-876c-106b3ea3f257"
+        }
+      ],
+      "id": "d2e6ac76-c640-4f16-b222-61e6b1bf736e",
+      "createdAt": "2026-07-28T01:37:39.000Z",
+      "updatedAt": "2026-07-28T01:37:39.000Z",
+      "uid": "35240-d2e6ac76-c640-4f16-b222-61e6b1bf736e"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.figshare.com/v2"
+    }
+  ]
+}

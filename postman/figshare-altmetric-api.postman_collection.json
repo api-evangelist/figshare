@@ -1,0 +1,202 @@
+{
+  "info": {
+    "_postman_id": "e59ce6ec-88ab-497d-a7aa-fe5b88547936",
+    "name": "Figshare altmetric API",
+    "description": "Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.\n\nContact Support:\n Name: Figshare Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:37:35.000Z",
+    "updatedAt": "2026-07-28T01:37:36.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e59ce6ec-88ab-497d-a7aa-fe5b88547936"
+  },
+  "item": [
+    {
+      "name": "altmetric",
+      "item": [
+        {
+          "name": "institutions",
+          "item": [
+            {
+              "name": "List Altmetric Institutions",
+              "id": "b4b0e3a0-6263-4584-a867-30883a9a1605",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/altmetric/institutions?offset=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "altmetric",
+                    "institutions"
+                  ],
+                  "query": [
+                    {
+                      "description": "Where to start the listing. The offset of the first item.",
+                      "key": "offset",
+                      "value": "0"
+                    }
+                  ]
+                },
+                "description": "Returns a list of institutions available for Altmetric reporting"
+              },
+              "response": [
+                {
+                  "id": "b9fe2123-2e3f-40a2-94f0-4c6a02b8e9e7",
+                  "name": "OK. An array of Altmetric institutions",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/altmetric/institutions?offset=0",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "altmetric",
+                        "institutions"
+                      ],
+                      "query": [
+                        {
+                          "description": "Where to start the listing. The offset of the first item.",
+                          "key": "offset",
+                          "value": "0"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"custom_domain\": \"<string>\"\n  },\n  {\n    \"id\": \"<integer>\",\n    \"name\": \"<string>\",\n    \"custom_domain\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:37:36.000Z",
+                  "updatedAt": "2026-07-28T01:37:36.000Z",
+                  "uid": "35240-b9fe2123-2e3f-40a2-94f0-4c6a02b8e9e7"
+                },
+                {
+                  "id": "1fc213f1-a5e1-4223-9c45-4ac50e09af29",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/altmetric/institutions?offset=0",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "altmetric",
+                        "institutions"
+                      ],
+                      "query": [
+                        {
+                          "description": "Where to start the listing. The offset of the first item.",
+                          "key": "offset",
+                          "value": "0"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:37:36.000Z",
+                  "updatedAt": "2026-07-28T01:37:36.000Z",
+                  "uid": "35240-1fc213f1-a5e1-4223-9c45-4ac50e09af29"
+                },
+                {
+                  "id": "64f7e828-a70e-493b-b277-afd46bd6bf31",
+                  "name": "Internal Server Error",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/altmetric/institutions?offset=0",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "altmetric",
+                        "institutions"
+                      ],
+                      "query": [
+                        {
+                          "description": "Where to start the listing. The offset of the first item.",
+                          "key": "offset",
+                          "value": "0"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:37:36.000Z",
+                  "updatedAt": "2026-07-28T01:37:36.000Z",
+                  "uid": "35240-64f7e828-a70e-493b-b277-afd46bd6bf31"
+                }
+              ],
+              "createdAt": "2026-07-28T01:37:36.000Z",
+              "updatedAt": "2026-07-28T01:37:36.000Z",
+              "uid": "35240-b4b0e3a0-6263-4584-a867-30883a9a1605"
+            }
+          ],
+          "id": "f1a6a02d-7ee7-4de0-99be-87528ad1c9db",
+          "createdAt": "2026-07-28T01:37:36.000Z",
+          "updatedAt": "2026-07-28T01:37:36.000Z",
+          "uid": "35240-f1a6a02d-7ee7-4de0-99be-87528ad1c9db"
+        }
+      ],
+      "id": "0c7f9dd1-91b1-4f31-b8f5-dbdff79366a4",
+      "createdAt": "2026-07-28T01:37:36.000Z",
+      "updatedAt": "2026-07-28T01:37:36.000Z",
+      "uid": "35240-0c7f9dd1-91b1-4f31-b8f5-dbdff79366a4"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.figshare.com/v2"
+    }
+  ]
+}

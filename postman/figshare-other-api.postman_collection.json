@@ -1,0 +1,1355 @@
+{
+  "info": {
+    "_postman_id": "608df1d1-9911-482b-bcd1-8620f299c129",
+    "name": "Figshare altmetric other API",
+    "description": "Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.\n\nContact Support:\n Name: Figshare Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:37:50.000Z",
+    "updatedAt": "2026-07-28T01:37:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-608df1d1-9911-482b-bcd1-8620f299c129"
+  },
+  "item": [
+    {
+      "name": "item_types",
+      "item": [
+        {
+          "name": "Item Types",
+          "id": "7fe6cafc-4e79-49bf-81c5-7e1a7d1d180f",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all",
+                  "type": "string"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize",
+                  "type": "string"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/item_types?group_id=0",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "item_types"
+              ],
+              "query": [
+                {
+                  "description": "Identifier of the group for which the item types are requested",
+                  "key": "group_id",
+                  "value": "0"
+                }
+              ]
+            },
+            "description": "Returns the list of Item Types of the requested group. If no user is authenticated, returns the item types available for Figshare."
+          },
+          "response": [
+            {
+              "id": "0b02b462-2ff5-4a5c-9e70-2cd461454381",
+              "name": "OK. An array of item types",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/item_types?group_id=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "item_types"
+                  ],
+                  "query": [
+                    {
+                      "description": "Identifier of the group for which the item types are requested",
+                      "key": "group_id",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"icon\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"is_selectable\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"public_description\": \"<string>\",\n    \"string_id\": \"<string>\",\n    \"url_name\": \"<string>\"\n  },\n  {\n    \"icon\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"is_selectable\": \"<boolean>\",\n    \"name\": \"<string>\",\n    \"public_description\": \"<string>\",\n    \"string_id\": \"<string>\",\n    \"url_name\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-0b02b462-2ff5-4a5c-9e70-2cd461454381"
+            },
+            {
+              "id": "de054566-f216-40e0-b3c9-b7ad2d568902",
+              "name": "Bad Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/item_types?group_id=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "item_types"
+                  ],
+                  "query": [
+                    {
+                      "description": "Identifier of the group for which the item types are requested",
+                      "key": "group_id",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-de054566-f216-40e0-b3c9-b7ad2d568902"
+            },
+            {
+              "id": "bdc0186f-b666-4e37-acb8-f76238d0f82f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/item_types?group_id=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "item_types"
+                  ],
+                  "query": [
+                    {
+                      "description": "Identifier of the group for which the item types are requested",
+                      "key": "group_id",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-bdc0186f-b666-4e37-acb8-f76238d0f82f"
+            },
+            {
+              "id": "74668a70-d373-41d0-8df6-920d8dba961e",
+              "name": "Not Found",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/item_types?group_id=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "item_types"
+                  ],
+                  "query": [
+                    {
+                      "description": "Identifier of the group for which the item types are requested",
+                      "key": "group_id",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-74668a70-d373-41d0-8df6-920d8dba961e"
+            },
+            {
+              "id": "af440609-eee2-4fe6-90f3-b3db2be50260",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/item_types?group_id=0",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "item_types"
+                  ],
+                  "query": [
+                    {
+                      "description": "Identifier of the group for which the item types are requested",
+                      "key": "group_id",
+                      "value": "0"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-af440609-eee2-4fe6-90f3-b3db2be50260"
+            }
+          ],
+          "createdAt": "2026-07-28T01:37:51.000Z",
+          "updatedAt": "2026-07-28T01:37:51.000Z",
+          "uid": "35240-7fe6cafc-4e79-49bf-81c5-7e1a7d1d180f"
+        }
+      ],
+      "id": "7d7c71a3-c687-4326-9350-ca4e54e57488",
+      "createdAt": "2026-07-28T01:37:51.000Z",
+      "updatedAt": "2026-07-28T01:37:51.000Z",
+      "uid": "35240-7d7c71a3-c687-4326-9350-ca4e54e57488"
+    },
+    {
+      "name": "account",
+      "item": [
+        {
+          "name": "funding",
+          "item": [
+            {
+              "name": "search",
+              "item": [
+                {
+                  "name": "Search Funding",
+                  "id": "9f0e65d2-0b41-4fa7-a477-b7d9ec1c5644",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "auth": {
+                      "type": "oauth2",
+                      "oauth2": [
+                        {
+                          "key": "scope",
+                          "value": "all",
+                          "type": "string"
+                        },
+                        {
+                          "key": "accessTokenUrl",
+                          "value": "https://api.figshare.com/v2/token",
+                          "type": "string"
+                        },
+                        {
+                          "key": "authUrl",
+                          "value": "https://figshare.com/account/applications/authorize",
+                          "type": "string"
+                        },
+                        {
+                          "key": "grant_type",
+                          "value": "authorization_code",
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"search_for\": \"<string>\"\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/account/funding/search",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "funding",
+                        "search"
+                      ]
+                    },
+                    "description": "Search for fundings"
+                  },
+                  "response": [
+                    {
+                      "id": "54206d8c-c7b9-4252-9c80-296ad501008b",
+                      "name": "OK. An array of funding information",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/funding/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "funding",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "[\n  {\n    \"funder_name\": \"<string>\",\n    \"grant_code\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"is_user_defined\": \"<integer>\",\n    \"title\": \"<string>\",\n    \"url\": \"<string>\"\n  },\n  {\n    \"funder_name\": \"<string>\",\n    \"grant_code\": \"<string>\",\n    \"id\": \"<integer>\",\n    \"is_user_defined\": \"<integer>\",\n    \"title\": \"<string>\",\n    \"url\": \"<string>\"\n  }\n]",
+                      "createdAt": "2026-07-28T01:37:51.000Z",
+                      "updatedAt": "2026-07-28T01:37:51.000Z",
+                      "uid": "35240-54206d8c-c7b9-4252-9c80-296ad501008b"
+                    },
+                    {
+                      "id": "b7f78c51-280c-4694-b162-c14816128858",
+                      "name": "Bad Request",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/funding/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "funding",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "Bad Request",
+                      "code": 400,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:51.000Z",
+                      "updatedAt": "2026-07-28T01:37:51.000Z",
+                      "uid": "35240-b7f78c51-280c-4694-b162-c14816128858"
+                    },
+                    {
+                      "id": "82c0889a-b5fb-442b-8501-f36b7c9800b4",
+                      "name": "Forbidden",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/funding/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "funding",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "Forbidden",
+                      "code": 403,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:37:51.000Z",
+                      "updatedAt": "2026-07-28T01:37:51.000Z",
+                      "uid": "35240-82c0889a-b5fb-442b-8501-f36b7c9800b4"
+                    },
+                    {
+                      "id": "c55e1863-09f6-40af-8c0e-fa22e4392428",
+                      "name": "Internal Server Error",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"search_for\": \"<string>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/account/funding/search",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "account",
+                            "funding",
+                            "search"
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:51.000Z",
+                      "updatedAt": "2026-07-28T01:37:51.000Z",
+                      "uid": "35240-c55e1863-09f6-40af-8c0e-fa22e4392428"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:37:51.000Z",
+                  "updatedAt": "2026-07-28T01:37:51.000Z",
+                  "uid": "35240-9f0e65d2-0b41-4fa7-a477-b7d9ec1c5644"
+                }
+              ],
+              "id": "eb988e7e-6859-499d-aa19-a144a13ab842",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-eb988e7e-6859-499d-aa19-a144a13ab842"
+            }
+          ],
+          "id": "7ff7b57a-0ca3-4356-9aeb-ceade4496522",
+          "createdAt": "2026-07-28T01:37:51.000Z",
+          "updatedAt": "2026-07-28T01:37:51.000Z",
+          "uid": "35240-7ff7b57a-0ca3-4356-9aeb-ceade4496522"
+        },
+        {
+          "name": "licenses",
+          "item": [
+            {
+              "name": "Private Account Licenses",
+              "id": "6c71c1ad-4ce9-4dd9-9348-8f341991c8fd",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "auth": {
+                  "type": "oauth2",
+                  "oauth2": [
+                    {
+                      "key": "scope",
+                      "value": "all",
+                      "type": "string"
+                    },
+                    {
+                      "key": "accessTokenUrl",
+                      "value": "https://api.figshare.com/v2/token",
+                      "type": "string"
+                    },
+                    {
+                      "key": "authUrl",
+                      "value": "https://figshare.com/account/applications/authorize",
+                      "type": "string"
+                    },
+                    {
+                      "key": "grant_type",
+                      "value": "authorization_code",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/account/licenses",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "account",
+                    "licenses"
+                  ]
+                },
+                "description": "This is a private endpoint that requires OAuth. It will return a list with figshare public licenses AND licenses defined for account's institution."
+              },
+              "response": [
+                {
+                  "id": "577a48c7-7a71-42cd-9050-ad0e77786909",
+                  "name": "OK. An array of personal licenses",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/account/licenses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "licenses"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"value\": \"<integer>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"value\": \"<integer>\"\n  }\n]",
+                  "createdAt": "2026-07-28T01:37:51.000Z",
+                  "updatedAt": "2026-07-28T01:37:51.000Z",
+                  "uid": "35240-577a48c7-7a71-42cd-9050-ad0e77786909"
+                },
+                {
+                  "id": "33e10eed-8579-4499-a6db-803a40947ca1",
+                  "name": "Bad Request",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/account/licenses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "licenses"
+                      ]
+                    }
+                  },
+                  "status": "Bad Request",
+                  "code": 400,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:37:51.000Z",
+                  "updatedAt": "2026-07-28T01:37:51.000Z",
+                  "uid": "35240-33e10eed-8579-4499-a6db-803a40947ca1"
+                },
+                {
+                  "id": "9c7fe748-27ad-4cb7-963d-4db64776fa20",
+                  "name": "Forbidden",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/account/licenses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "licenses"
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T01:37:51.000Z",
+                  "updatedAt": "2026-07-28T01:37:51.000Z",
+                  "uid": "35240-9c7fe748-27ad-4cb7-963d-4db64776fa20"
+                },
+                {
+                  "id": "2fdfebd7-e39b-4391-a11c-8ddfb2447e57",
+                  "name": "Internal Server Error",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/account/licenses",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "account",
+                        "licenses"
+                      ]
+                    }
+                  },
+                  "status": "Internal Server Error",
+                  "code": 500,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T01:37:51.000Z",
+                  "updatedAt": "2026-07-28T01:37:51.000Z",
+                  "uid": "35240-2fdfebd7-e39b-4391-a11c-8ddfb2447e57"
+                }
+              ],
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-6c71c1ad-4ce9-4dd9-9348-8f341991c8fd"
+            }
+          ],
+          "id": "3038034a-8b5c-47b3-b368-77f520b4682f",
+          "createdAt": "2026-07-28T01:37:51.000Z",
+          "updatedAt": "2026-07-28T01:37:51.000Z",
+          "uid": "35240-3038034a-8b5c-47b3-b368-77f520b4682f"
+        },
+        {
+          "name": "Private Account information",
+          "id": "36759c1e-a2c9-4818-b060-e80948c00b3b",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "oauth2",
+              "oauth2": [
+                {
+                  "key": "scope",
+                  "value": "all",
+                  "type": "string"
+                },
+                {
+                  "key": "accessTokenUrl",
+                  "value": "https://api.figshare.com/v2/token",
+                  "type": "string"
+                },
+                {
+                  "key": "authUrl",
+                  "value": "https://figshare.com/account/applications/authorize",
+                  "type": "string"
+                },
+                {
+                  "key": "grant_type",
+                  "value": "authorization_code",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/account",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "account"
+              ]
+            },
+            "description": "Account information for token/personal token"
+          },
+          "response": [
+            {
+              "id": "efd07d89-3a44-4d3f-b76d-fe532e2985c0",
+              "name": "OK. Account representation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/account",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "account"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"active\": \"<integer>\",\n  \"created_date\": \"<string>\",\n  \"email\": \"<string>\",\n  \"first_name\": \"<string>\",\n  \"group_id\": \"<integer>\",\n  \"id\": \"<integer>\",\n  \"institution_id\": \"<integer>\",\n  \"institution_user_id\": \"<string>\",\n  \"last_name\": \"<string>\",\n  \"maximum_file_size\": \"<integer>\",\n  \"modified_date\": \"<string>\",\n  \"orcid_id\": \"<string>\",\n  \"pending_quota_request\": \"<boolean>\",\n  \"quota\": \"<integer>\",\n  \"symplectic_user_id\": \"<string>\",\n  \"used_quota\": \"<integer>\",\n  \"used_quota_private\": \"<integer>\",\n  \"used_quota_public\": \"<integer>\",\n  \"user_id\": \"<integer>\"\n}",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-efd07d89-3a44-4d3f-b76d-fe532e2985c0"
+            },
+            {
+              "id": "2c0400e5-c458-4d7b-80d4-7276b399993e",
+              "name": "Forbidden",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/account",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "account"
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-2c0400e5-c458-4d7b-80d4-7276b399993e"
+            },
+            {
+              "id": "e6250a13-4ddc-41bb-9998-2f9932f218f8",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/account",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "account"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-e6250a13-4ddc-41bb-9998-2f9932f218f8"
+            }
+          ],
+          "createdAt": "2026-07-28T01:37:51.000Z",
+          "updatedAt": "2026-07-28T01:37:51.000Z",
+          "uid": "35240-36759c1e-a2c9-4818-b060-e80948c00b3b"
+        }
+      ],
+      "id": "d3047167-999c-4607-8048-91b0702ad6ce",
+      "createdAt": "2026-07-28T01:37:51.000Z",
+      "updatedAt": "2026-07-28T01:37:51.000Z",
+      "uid": "35240-d3047167-999c-4607-8048-91b0702ad6ce"
+    },
+    {
+      "name": "categories",
+      "item": [
+        {
+          "name": "Public Categories",
+          "id": "3d185886-4e3d-4bc3-aea7-b2498f34de53",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/categories",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "categories"
+              ]
+            },
+            "description": "Returns a list of public categories"
+          },
+          "response": [
+            {
+              "id": "941368f0-c93a-454e-90b5-abd51be2ef55",
+              "name": "OK. An array of categories",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"has_children\": false,\n    \"id\": \"<integer>\",\n    \"is_selectable\": false,\n    \"parent_id\": \"<integer>\",\n    \"path\": \"<string>\",\n    \"source_id\": \"<string>\",\n    \"taxonomy_id\": \"<integer>\",\n    \"title\": \"<string>\"\n  },\n  {\n    \"has_children\": true,\n    \"id\": \"<integer>\",\n    \"is_selectable\": false,\n    \"parent_id\": \"<integer>\",\n    \"path\": \"<string>\",\n    \"source_id\": \"<string>\",\n    \"taxonomy_id\": \"<integer>\",\n    \"title\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-941368f0-c93a-454e-90b5-abd51be2ef55"
+            },
+            {
+              "id": "355c7bcf-b4ff-4f7f-845b-7a6b2a534e3a",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/categories",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "categories"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-355c7bcf-b4ff-4f7f-845b-7a6b2a534e3a"
+            }
+          ],
+          "createdAt": "2026-07-28T01:37:51.000Z",
+          "updatedAt": "2026-07-28T01:37:51.000Z",
+          "uid": "35240-3d185886-4e3d-4bc3-aea7-b2498f34de53"
+        }
+      ],
+      "id": "ed7b8bba-7dbf-4b52-b3ed-a8d5af8a9c32",
+      "createdAt": "2026-07-28T01:37:51.000Z",
+      "updatedAt": "2026-07-28T01:37:51.000Z",
+      "uid": "35240-ed7b8bba-7dbf-4b52-b3ed-a8d5af8a9c32"
+    },
+    {
+      "name": "licenses",
+      "item": [
+        {
+          "name": "Public Licenses",
+          "id": "0e47e5d3-a5f9-424a-8f5e-c5f57aedfe9c",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/licenses",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "licenses"
+              ]
+            },
+            "description": "Returns a list of public licenses"
+          },
+          "response": [
+            {
+              "id": "350ff0d1-7f70-4098-9359-a4577502b763",
+              "name": "OK. An array of licenses",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/licenses",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "licenses"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"value\": \"<integer>\"\n  },\n  {\n    \"name\": \"<string>\",\n    \"url\": \"<string>\",\n    \"value\": \"<integer>\"\n  }\n]",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-350ff0d1-7f70-4098-9359-a4577502b763"
+            },
+            {
+              "id": "56245f0b-5de7-4e19-9e34-5860324714f6",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/licenses",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "licenses"
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-56245f0b-5de7-4e19-9e34-5860324714f6"
+            }
+          ],
+          "createdAt": "2026-07-28T01:37:51.000Z",
+          "updatedAt": "2026-07-28T01:37:51.000Z",
+          "uid": "35240-0e47e5d3-a5f9-424a-8f5e-c5f57aedfe9c"
+        }
+      ],
+      "id": "bd956d07-eaa6-425f-bb02-6988f5e45ebf",
+      "createdAt": "2026-07-28T01:37:51.000Z",
+      "updatedAt": "2026-07-28T01:37:51.000Z",
+      "uid": "35240-bd956d07-eaa6-425f-bb02-6988f5e45ebf"
+    },
+    {
+      "name": "file",
+      "item": [
+        {
+          "name": "download",
+          "item": [
+            {
+              "name": "{file_id}",
+              "item": [
+                {
+                  "name": "Public File Download",
+                  "id": "a15b9e00-7d45-4622-a809-7c1b7475e61c",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [],
+                    "url": {
+                      "raw": "{{baseUrl}}/file/download/:file_id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "file",
+                        "download",
+                        ":file_id"
+                      ],
+                      "variable": [
+                        {
+                          "id": "8ff49315-f2ca-4a4d-b723-7043f049651d",
+                          "key": "file_id",
+                          "value": "<integer>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Starts the download of a file"
+                  },
+                  "response": [
+                    {
+                      "id": "16aa23b2-1f5a-4ed5-a8c6-435d317ded37",
+                      "name": "OK",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/file/download/:file_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "file",
+                            "download",
+                            ":file_id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "file_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:51.000Z",
+                      "updatedAt": "2026-07-28T01:37:51.000Z",
+                      "uid": "35240-16aa23b2-1f5a-4ed5-a8c6-435d317ded37"
+                    },
+                    {
+                      "id": "b951a1e7-e67b-4829-8843-14cea60b20d7",
+                      "name": "Internal Server Error",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/file/download/:file_id",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "file",
+                            "download",
+                            ":file_id"
+                          ],
+                          "variable": [
+                            {
+                              "key": "file_id"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "Internal Server Error",
+                      "code": 500,
+                      "_postman_previewlanguage": "text",
+                      "header": [],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": null,
+                      "createdAt": "2026-07-28T01:37:51.000Z",
+                      "updatedAt": "2026-07-28T01:37:51.000Z",
+                      "uid": "35240-b951a1e7-e67b-4829-8843-14cea60b20d7"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:37:51.000Z",
+                  "updatedAt": "2026-07-28T01:37:51.000Z",
+                  "uid": "35240-a15b9e00-7d45-4622-a809-7c1b7475e61c"
+                }
+              ],
+              "id": "f1ca982f-01f2-466d-a643-5bf9645e99e8",
+              "createdAt": "2026-07-28T01:37:51.000Z",
+              "updatedAt": "2026-07-28T01:37:51.000Z",
+              "uid": "35240-f1ca982f-01f2-466d-a643-5bf9645e99e8"
+            }
+          ],
+          "id": "5ef57798-090b-4da5-bf78-15290aec9c0b",
+          "createdAt": "2026-07-28T01:37:51.000Z",
+          "updatedAt": "2026-07-28T01:37:51.000Z",
+          "uid": "35240-5ef57798-090b-4da5-bf78-15290aec9c0b"
+        }
+      ],
+      "id": "2a73a984-6d33-464c-9e93-1d6736f1b085",
+      "createdAt": "2026-07-28T01:37:51.000Z",
+      "updatedAt": "2026-07-28T01:37:51.000Z",
+      "uid": "35240-2a73a984-6d33-464c-9e93-1d6736f1b085"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.figshare.com/v2"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "provider": "figshare",
+  "sources": [
+    "figshare-altmetric-api-openapi.yml",
+    "figshare-articles-api-openapi.yml",
+    "figshare-authors-api-openapi.yml",
+    "figshare-collections-api-openapi.yml",
+    "figshare-institutions-api-openapi.yml",
+    "figshare-oauth-api-openapi.yml",
+    "figshare-other-api-openapi.yml",
+    "figshare-profiles-api-openapi.yml",
+    "figshare-projects-api-openapi.yml",
+    "figshare-symplectic-api-openapi.yml"
+  ],
+  "outputs": [
+    "figshare-altmetric-api-openapi.yml",
+    "figshare-articles-api-openapi.yml",
+    "figshare-authors-api-openapi.yml",
+    "figshare-collections-api-openapi.yml",
+    "figshare-institutions-api-openapi.yml",
+    "figshare-oauth-api-openapi.yml",
+    "figshare-other-api-openapi.yml",
+    "figshare-profiles-api-openapi.yml",
+    "figshare-projects-api-openapi.yml",
+    "figshare-symplectic-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

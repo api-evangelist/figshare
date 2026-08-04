@@ -1,0 +1,327 @@
+{
+  "info": {
+    "_postman_id": "cc35621c-e7e1-4c8f-b7dd-b14c24f2d922",
+    "name": "Figshare altmetric oauth API",
+    "description": "Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.\n\nContact Support:\n Name: Figshare Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:37:46.000Z",
+    "updatedAt": "2026-07-28T01:37:46.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cc35621c-e7e1-4c8f-b7dd-b14c24f2d922"
+  },
+  "item": [
+    {
+      "name": "token",
+      "item": [
+        {
+          "name": "Get OAuth token information",
+          "id": "d793f1a4-0ab4-4b0f-86f3-b14ec5fa6929",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/token?access_token=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "token"
+              ],
+              "query": [
+                {
+                  "description": "OAuth access token",
+                  "key": "access_token",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns information about the current OAuth token"
+          },
+          "response": [
+            {
+              "id": "21475bf1-155f-4fcb-9334-9d794e8fe9f9",
+              "name": "OK. Token information",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/token?access_token=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "token"
+                  ],
+                  "query": [
+                    {
+                      "description": "OAuth access token",
+                      "key": "access_token",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"access_token\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"token_type\": \"<string>\",\n  \"token\": \"<string>\",\n  \"refresh_token\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:37:46.000Z",
+              "updatedAt": "2026-07-28T01:37:46.000Z",
+              "uid": "35240-21475bf1-155f-4fcb-9334-9d794e8fe9f9"
+            },
+            {
+              "id": "a5b5bfdb-1a6b-44ff-92d3-3efe32b7c577",
+              "name": "Bad Request",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/token?access_token=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "token"
+                  ],
+                  "query": [
+                    {
+                      "description": "OAuth access token",
+                      "key": "access_token",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:46.000Z",
+              "updatedAt": "2026-07-28T01:37:46.000Z",
+              "uid": "35240-a5b5bfdb-1a6b-44ff-92d3-3efe32b7c577"
+            },
+            {
+              "id": "dd289a5a-cc8b-474b-8d5b-d920d6870f85",
+              "name": "Forbidden",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/token?access_token=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "token"
+                  ],
+                  "query": [
+                    {
+                      "description": "OAuth access token",
+                      "key": "access_token",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"code\": \"<integer>\",\n  \"message\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:37:46.000Z",
+              "updatedAt": "2026-07-28T01:37:46.000Z",
+              "uid": "35240-dd289a5a-cc8b-474b-8d5b-d920d6870f85"
+            }
+          ],
+          "createdAt": "2026-07-28T01:37:46.000Z",
+          "updatedAt": "2026-07-28T01:37:46.000Z",
+          "uid": "35240-d793f1a4-0ab4-4b0f-86f3-b14ec5fa6929"
+        },
+        {
+          "name": "Create OAuth token",
+          "id": "19017865-64e3-4c76-ad48-3fa896a44c58",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"client_id\": \"<string>\",\n  \"client_secret\": \"<string>\",\n  \"grant_type\": \"client_credentials\",\n  \"code\": \"<string>\",\n  \"refresh_token\": \"<string>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/token",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "token"
+              ]
+            },
+            "description": "Creates OAuth token using various grant types"
+          },
+          "response": [
+            {
+              "id": "f53abff3-d386-4bd0-bb65-b48e924d5e95",
+              "name": "OK. Token created successfully <a href='http://tools.ietf.org/html/rfc6749#section-5.1' target='_blank'>RFC 6749 Section 5.1</a>.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"client_id\": \"<string>\",\n  \"client_secret\": \"<string>\",\n  \"grant_type\": \"client_credentials\",\n  \"code\": \"<string>\",\n  \"refresh_token\": \"<string>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "token"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"access_token\": \"<string>\",\n  \"expires_in\": \"<integer>\",\n  \"token_type\": \"<string>\",\n  \"token\": \"<string>\",\n  \"refresh_token\": \"<string>\",\n  \"scope\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:37:46.000Z",
+              "updatedAt": "2026-07-28T01:37:46.000Z",
+              "uid": "35240-f53abff3-d386-4bd0-bb65-b48e924d5e95"
+            },
+            {
+              "id": "9ae42e71-3f80-45a3-adb7-498106ea9670",
+              "name": "Bad Request <a href='http://tools.ietf.org/html/rfc6749#section-5.2' target='_blank'>RFC 6749 Section 5.2</a>.",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"client_id\": \"<string>\",\n  \"client_secret\": \"<string>\",\n  \"grant_type\": \"client_credentials\",\n  \"code\": \"<string>\",\n  \"refresh_token\": \"<string>\",\n  \"username\": \"<string>\",\n  \"password\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/token",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "token"
+                  ]
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:37:46.000Z",
+              "updatedAt": "2026-07-28T01:37:46.000Z",
+              "uid": "35240-9ae42e71-3f80-45a3-adb7-498106ea9670"
+            }
+          ],
+          "createdAt": "2026-07-28T01:37:46.000Z",
+          "updatedAt": "2026-07-28T01:37:46.000Z",
+          "uid": "35240-19017865-64e3-4c76-ad48-3fa896a44c58"
+        }
+      ],
+      "id": "5ea14093-ee93-4184-bc01-8b06726768be",
+      "createdAt": "2026-07-28T01:37:46.000Z",
+      "updatedAt": "2026-07-28T01:37:46.000Z",
+      "uid": "35240-5ea14093-ee93-4184-bc01-8b06726768be"
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://api.figshare.com/v2"
+    }
+  ]
+}
