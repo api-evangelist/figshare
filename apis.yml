@@ -424,6 +424,9 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 common:
+  - type: CapabilityMap
+    url: capabilities/figshare-capability-edges.yml
+    name: Figshare Business Capability Map
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/figshare/overview
   - type: AgenticAccess

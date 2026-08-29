@@ -1,0 +1,36 @@
+slug: figshare
+provider: Figshare
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Education
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: articles
+  spec_file: figshare-articles-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.8
+  evidence: GET /articles articles_list  Public Articles; GET /articles/{article_id}/versions article_versions;
+    GET /articles/{article_id}/versions/{version_id}/embargo  Public Article Embargo
+  reason: Articles are the deposited research outputs (datasets, papers, figures) with versions, files,
+    embargo and confidentiality controls in a research data repository — tracking and stewardship of scholarly
+    output including open access and DOIs.
+- tag: collections
+  spec_file: figshare-collections-api-openapi.yml
+  capability_id: BC-4780.40
+  capability_id_l1: BC-4780
+  capability_name: Scholarly Output & Publication Management
+  confidence: 0.7
+  evidence: GET /collections/{collection_id}/articles collection_articles  Public Collection Articles;
+    schemas CollectionHandle, FundingInformation, CollectionVersions
+  reason: Collections group and publish sets of research outputs with versioning, handles/DOIs and funding
+    metadata in a research repository — scholarly output and publication stewardship.
