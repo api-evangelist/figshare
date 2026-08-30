@@ -130,7 +130,7 @@ apis:
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
   tags:
-  - Authors
+  - authors
   tags_raw:
   - authors
   properties:
@@ -469,8 +469,6 @@ common:
     url: json-ld/figshare-context.jsonld
   - type: BlogRSS
     url: https://info.figshare.com/blog/feed/
-  - type: Blog
-    url: blogs/blogs.json
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
