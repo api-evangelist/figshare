@@ -130,7 +130,7 @@ apis:
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
   tags:
-  - authors
+  - Authors
   tags_raw:
   - authors
   properties:
@@ -206,6 +206,8 @@ apis:
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
   tags:
+  - Institutions
+  tags_raw:
   - institutions
   properties:
   - type: OpenAPI
@@ -393,6 +395,8 @@ apis:
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
   tags:
+  - Symplectic
+  tags_raw:
   - symplectic
   properties:
   - type: OpenAPI
