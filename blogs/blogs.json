@@ -2,15 +2,6 @@
   "repo": "figshare",
   "feeds": [
     {
-      "source": "https://info.figshare.com/feed/",
-      "feed_url": "https://info.figshare.com/feed/",
-      "title": "",
-      "saved": 0,
-      "method": "feed",
-      "nature": "undetermined",
-      "nature_basis": null
-    },
-    {
       "source": "https://github.com/figshare",
       "feed_url": "https://github.com/figshare",
       "title": "",
@@ -23,9 +14,16 @@
       "title": "",
       "saved": 0,
       "method": "feed"
+    },
+    {
+      "source": "https://info.figshare.com/feed/",
+      "feed_url": "https://info.figshare.com/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "fetched": "2026-08-30T22:33:40Z",
+  "fetched": "2026-09-06T19:17:18Z",
   "post_count": 17,
   "feed_nature": "undetermined",
   "feed_nature_basis": null,
