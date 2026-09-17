@@ -238,44 +238,6 @@ apis:
     url: examples/figshare-project-example.json
   - type: Examples
     url: examples/figshare-file_upload-example.json
-- aid: figshare:figshare-oauth-api
-  name: Figshare oauth API
-  description: The oauth API from Figshare — 1 operation(s) for oauth.
-  humanURL: https://docs.figshare.com/
-  baseURL: https://api.figshare.com/v2
-  tags:
-  - Authentication
-  tags_raw:
-  - oauth
-  properties:
-  - type: OpenAPI
-    url: openapi/figshare-oauth-api-openapi.yml
-  - type: Documentation
-    url: https://docs.figshare.com/
-  - type: Authentication
-    url: https://docs.figshare.com/api_reference/oauth/
-  - type: JSONSchema
-    url: json-schema/figshare-article-schema.json
-  - type: JSONSchema
-    url: json-schema/figshare-collection-schema.json
-  - type: JSONSchema
-    url: json-schema/figshare-project-schema.json
-  - type: JSONSchema
-    url: json-schema/figshare-author-schema.json
-  - type: JSONSchema
-    url: json-schema/figshare-publicfile-schema.json
-  - type: JSONSchema
-    url: json-schema/figshare-license-schema.json
-  - type: JSONSchema
-    url: json-schema/figshare-fundinginformation-schema.json
-  - type: Examples
-    url: examples/figshare-article-example.json
-  - type: Examples
-    url: examples/figshare-collection-example.json
-  - type: Examples
-    url: examples/figshare-project-example.json
-  - type: Examples
-    url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-other-api
   name: Figshare other API
   description: The other API from Figshare — 7 operation(s) for other.
@@ -401,6 +363,42 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/figshare-symplectic-api-openapi.yml
+  - type: Documentation
+    url: https://docs.figshare.com/
+  - type: Authentication
+    url: https://docs.figshare.com/api_reference/oauth/
+  - type: JSONSchema
+    url: json-schema/figshare-article-schema.json
+  - type: JSONSchema
+    url: json-schema/figshare-collection-schema.json
+  - type: JSONSchema
+    url: json-schema/figshare-project-schema.json
+  - type: JSONSchema
+    url: json-schema/figshare-author-schema.json
+  - type: JSONSchema
+    url: json-schema/figshare-publicfile-schema.json
+  - type: JSONSchema
+    url: json-schema/figshare-license-schema.json
+  - type: JSONSchema
+    url: json-schema/figshare-fundinginformation-schema.json
+  - type: Examples
+    url: examples/figshare-article-example.json
+  - type: Examples
+    url: examples/figshare-collection-example.json
+  - type: Examples
+    url: examples/figshare-project-example.json
+  - type: Examples
+    url: examples/figshare-file_upload-example.json
+- aid: figshare:figshare-oauth-api
+  name: Figshare OAUTH API
+  description: The oauth API from Figshare — 1 operation(s) for oauth.
+  humanURL: https://docs.figshare.com/
+  baseURL: https://api.figshare.com/v2
+  tags:
+  - oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/figshare-oauth-api-openapi.yml
   - type: Documentation
     url: https://docs.figshare.com/
   - type: Authentication
