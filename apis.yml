@@ -396,6 +396,8 @@ apis:
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
   tags:
+  - Authentication
+  tags_raw:
   - oauth
   properties:
   - type: OpenAPI
