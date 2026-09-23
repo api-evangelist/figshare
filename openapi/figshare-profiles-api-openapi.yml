@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Figshare altmetric profiles API
+  title: Figshare Profiles API
   description: Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.
   version: '2.0'
   contact:
@@ -12,12 +12,12 @@ info:
 servers:
 - url: https://api.figshare.com/v2
 tags:
-- name: profiles
+- name: Profiles
 paths:
   /account/profile:
     put:
       tags:
-      - profiles
+      - Profiles
       summary: Update public profile
       description: Updates the fields of the user's public profile.
       operationId: update_user_profile
@@ -71,7 +71,7 @@ paths:
   /account/profile/{user_id}/picture:
     post:
       tags:
-      - profiles
+      - Profiles
       summary: Update public profile picture
       description: Updates the profile picture of the user's public profile.
       operationId: update_user_profile_picture
@@ -126,16 +126,6 @@ paths:
         - all
 components:
   schemas:
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
-      x-tag: common
     ProfileUpdateData:
       type: object
       properties:
@@ -217,6 +207,16 @@ components:
                 format: url
                 example: https://researchgate.net/profile/1
       x-tag: profiles
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
+      x-tag: common
   securitySchemes:
     OAuth2:
       type: oauth2

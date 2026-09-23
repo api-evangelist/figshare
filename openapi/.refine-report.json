@@ -1,16 +1,7 @@
 {
   "provider": "figshare",
   "sources": [
-    "figshare-altmetric-api-openapi.yml",
-    "figshare-articles-api-openapi.yml",
-    "figshare-authors-api-openapi.yml",
-    "figshare-collections-api-openapi.yml",
-    "figshare-institutions-api-openapi.yml",
-    "figshare-oauth-api-openapi.yml",
-    "figshare-other-api-openapi.yml",
-    "figshare-profiles-api-openapi.yml",
-    "figshare-projects-api-openapi.yml",
-    "figshare-symplectic-api-openapi.yml"
+    "_original/figshare-api-openapi.yml"
   ],
   "outputs": [
     "figshare-altmetric-api-openapi.yml",
@@ -24,9 +15,37 @@
     "figshare-projects-api-openapi.yml",
     "figshare-symplectic-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "figshare-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "figshare-api-openapi.yml: declared missing tag: altmetric",
+    "figshare-api-openapi.yml: declared missing tag: articles",
+    "figshare-api-openapi.yml: declared missing tag: authors",
+    "figshare-api-openapi.yml: declared missing tag: collections",
+    "figshare-api-openapi.yml: declared missing tag: institutions",
+    "figshare-api-openapi.yml: declared missing tag: oauth",
+    "figshare-api-openapi.yml: declared missing tag: other",
+    "figshare-api-openapi.yml: declared missing tag: profiles",
+    "figshare-api-openapi.yml: declared missing tag: projects",
+    "figshare-api-openapi.yml: declared missing tag: symplectic",
+    "superseded outputs removed: figshare-o-auth-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 10 total)"
+  ],
+  "skipped": [
+    "figshare-altmetric-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-articles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-authors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-institutions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-other-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-symplectic-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

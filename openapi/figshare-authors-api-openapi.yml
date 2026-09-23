@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Figshare altmetric authors API
+  title: Figshare Authors API
   description: Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.
   version: '2.0'
   contact:
@@ -12,12 +12,12 @@ info:
 servers:
 - url: https://api.figshare.com/v2
 tags:
-- name: authors
+- name: Authors
 paths:
   /account/authors/search:
     post:
       tags:
-      - authors
+      - Authors
       summary: Search Authors
       description: Search for authors
       operationId: private_authors_search
@@ -56,7 +56,7 @@ paths:
   /account/authors/{author_id}:
     get:
       tags:
-      - authors
+      - Authors
       summary: Author details
       description: View author details
       operationId: private_author_details
@@ -156,6 +156,36 @@ components:
           type: boolean
           description: Return only authors that have published items if True
       x-tag: authors
+    AuthorComplete:
+      required:
+      - first_name
+      - group_id
+      - institution_id
+      - is_public
+      - job_title
+      - last_name
+      properties:
+        institution_id:
+          type: integer
+          description: Institution id
+        group_id:
+          type: integer
+          description: Group id
+        first_name:
+          type: string
+          description: First Name
+        last_name:
+          type: string
+          description: Last Name
+        is_public:
+          type: integer
+          description: if 1 then the author has published items
+        job_title:
+          type: string
+          description: Job title
+      allOf:
+      - $ref: '#/components/schemas/Author'
+      x-tag: authors
     Author:
       required:
       - first_name
@@ -195,36 +225,6 @@ components:
           type: string
           description: Author Orcid
           example: 1234-5678-9123-1234
-      x-tag: authors
-    AuthorComplete:
-      required:
-      - first_name
-      - group_id
-      - institution_id
-      - is_public
-      - job_title
-      - last_name
-      properties:
-        institution_id:
-          type: integer
-          description: Institution id
-        group_id:
-          type: integer
-          description: Group id
-        first_name:
-          type: string
-          description: First Name
-        last_name:
-          type: string
-          description: Last Name
-        is_public:
-          type: integer
-          description: if 1 then the author has published items
-        job_title:
-          type: string
-          description: Job title
-      allOf:
-      - $ref: '#/components/schemas/Author'
       x-tag: authors
   securitySchemes:
     OAuth2:

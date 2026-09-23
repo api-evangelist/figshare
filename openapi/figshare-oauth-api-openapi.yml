@@ -1,6 +1,6 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Figshare altmetric oauth API
+  title: Figshare OAUTH API
   description: Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.
   version: '2.0'
   contact:
@@ -12,12 +12,12 @@ info:
 servers:
 - url: https://api.figshare.com/v2
 tags:
-- name: oauth
+- name: OAuth
 paths:
   /token:
     get:
       tags:
-      - oauth
+      - OAuth
       summary: Get OAuth token information
       description: Returns information about the current OAuth token
       operationId: get_token_info
@@ -46,7 +46,7 @@ paths:
       security: []
     post:
       tags:
-      - oauth
+      - OAuth
       summary: Create OAuth token
       description: Creates OAuth token using various grant types
       operationId: create_token
@@ -74,16 +74,6 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
-      x-tag: common
     CreateOAuthToken:
       required:
       - client_id
@@ -115,6 +105,16 @@ components:
           type: string
           description: Required if grant_type is 'password'
       x-tag: oauth
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
+      x-tag: common
     OAuthToken:
       required:
       - access_token
