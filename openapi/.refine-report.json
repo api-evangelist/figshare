@@ -15,9 +15,7 @@
     "figshare-projects-api-openapi.yml",
     "figshare-symplectic-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -33,8 +31,7 @@
     "figshare-api-openapi.yml: declared missing tag: profiles",
     "figshare-api-openapi.yml: declared missing tag: projects",
     "figshare-api-openapi.yml: declared missing tag: symplectic",
-    "superseded outputs removed: figshare-o-auth-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 10 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "figshare-altmetric-api-openapi.yml: previously refined output, superseded by openapi/_original/",
@@ -42,7 +39,7 @@
     "figshare-authors-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "figshare-collections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "figshare-institutions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "figshare-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "figshare-oauth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "figshare-other-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "figshare-profiles-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "figshare-projects-api-openapi.yml: previously refined output, superseded by openapi/_original/",

@@ -216,61 +216,13 @@ paths:
       security: []
 components:
   schemas:
-    CategoryList:
-      required:
-      - has_children
-      - is_selectable
-      properties:
-        is_selectable:
-          type: boolean
-          description: The selectable status
-          example: true
-        has_children:
-          type: boolean
-          description: True if category has children
-          example: false
-      allOf:
-      - $ref: '#/components/schemas/Category'
-      x-tag: common
-    ItemType:
-      required:
-      - icon
-      - id
-      - is_selectable
-      - name
-      - public_description
-      - string_id
-      - url_name
+    FundingSearch:
       type: object
       properties:
-        id:
-          minimum: 1
-          type: integer
-          description: The ID of the item type.
-        name:
+        search_for:
           type: string
-          description: The name of the item type
-          example: journal contribution
-        string_id:
-          type: string
-          description: The string identifier of the item type.
-          example: journal_contribution
-        icon:
-          type: string
-          description: The string identifying the icon of the item type.
-          example: paper
-        public_description:
-          type: string
-          description: The description of the item type.
-          example: This is the description of an item type
-        is_selectable:
-          type: boolean
-          description: The selectable status
-          example: true
-        url_name:
-          type: string
-          description: The URL name of the item type.
-          example: journal_contribution
+          description: Search term
+      x-tag: funding
     Account:
       required:
       - active
@@ -371,23 +323,6 @@ components:
           description: Symplectic ID associated to account
           example: djohn42
       x-tag: other
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
-      x-tag: common
-    FundingSearch:
-      type: object
-      properties:
-        search_for:
-          type: string
-          description: Search term
-      x-tag: funding
     FundingInformation:
       required:
       - funder_name
@@ -442,6 +377,61 @@ components:
           format: url
           example: http://creativecommons.org/licenses/by/4.0/
       x-tag: institutions
+    ItemType:
+      required:
+      - icon
+      - id
+      - is_selectable
+      - name
+      - public_description
+      - string_id
+      - url_name
+      type: object
+      properties:
+        id:
+          minimum: 1
+          type: integer
+          description: The ID of the item type.
+        name:
+          type: string
+          description: The name of the item type
+          example: journal contribution
+        string_id:
+          type: string
+          description: The string identifier of the item type.
+          example: journal_contribution
+        icon:
+          type: string
+          description: The string identifying the icon of the item type.
+          example: paper
+        public_description:
+          type: string
+          description: The description of the item type.
+          example: This is the description of an item type
+        is_selectable:
+          type: boolean
+          description: The selectable status
+          example: true
+        url_name:
+          type: string
+          description: The URL name of the item type.
+          example: journal_contribution
+    CategoryList:
+      required:
+      - has_children
+      - is_selectable
+      properties:
+        is_selectable:
+          type: boolean
+          description: The selectable status
+          example: true
+        has_children:
+          type: boolean
+          description: True if category has children
+          example: false
+      allOf:
+      - $ref: '#/components/schemas/Category'
+      x-tag: common
     Category:
       required:
       - id
@@ -476,6 +466,16 @@ components:
           type: integer
           description: Internal id of taxonomy the category is part of
           example: 4
+      x-tag: common
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
       x-tag: common
   securitySchemes:
     OAuth2:

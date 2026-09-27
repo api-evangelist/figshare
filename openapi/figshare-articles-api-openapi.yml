@@ -2515,159 +2515,30 @@ paths:
         - all
 components:
   schemas:
-    ArticleEmbargoUpdater:
+    ArticleHandle:
       required:
-      - embargo_date
-      - embargo_type
-      - is_embargoed
+      - handle
       type: object
       properties:
-        is_embargoed:
-          type: boolean
-          description: Embargo status
-          example: true
-        embargo_date:
+        handle:
           type: string
-          description: Date when the embargo expires and the article gets published, '0' value will set up permanent embargo
-          example: '2018-05-22T04:04:04'
-        embargo_type:
-          type: string
-          description: 'Embargo can be enabled at the article or the file level. Possible values: article, file'
-          example: file
-          enum:
-          - article
-          - file
-        embargo_title:
-          type: string
-          description: Title for embargo
-          example: File(s) under embargo
-        embargo_reason:
-          type: string
-          description: Reason for setting embargo
-          example: ''
-        embargo_options:
-          type: array
-          description: List of embargo permissions to be associated with the article. The list must contain `id` and can also contain `group_ids`(a field that only applies to 'logged_in' permissions). The new list replaces old options in the database, and an empty list removes all permissions for this article. Administration permission has to be set up alone but logged in and IP range permissions can be set up together.
-          example:
-          - id: 1321
-          - id: 3345
-          - id: 54621
-            group_ids:
-            - 4332
-            - 5433
-            - 678
-          items:
-            type: object
-            properties: {}
+          description: Reserved Handle
+          example: 11172/FK2.FIGSHARE.20345
       x-tag: articles
-    ArticleUnpublishData:
+    ArticleConfidentiality:
       required:
+      - is_confidential
       - reason
       type: object
       properties:
+        is_confidential:
+          type: boolean
+          description: True if article is confidential
+          example: true
         reason:
-          maxLength: 500
-          minLength: 5
           type: string
-          description: Reason of article unpublishing
-          example: Unpublish article reason
-      x-tag: articles
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
-      x-tag: common
-    ArticleVersionUpdate:
-      type: object
-      properties:
-        supplementary_fields:
-          type: array
-          description: List of supplementary fields to be associated with the article version
-          example:
-          - name: abc
-            value: def
-          - name: fname
-            value: fvalue
-          items:
-            type: object
-            properties: {}
-        internal_metadata:
-          type: object
-          properties: {}
-          description: List of supplementary fields to be associated with the article version
-          example:
-            curation_review_date: '2021-11-16T13:03:38'
-            export_pdf_download_url: null
-      x-tag: article_version
-    FundingInformation:
-      required:
-      - funder_name
-      - grant_code
-      - id
-      - is_user_defined
-      - title
-      - url
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Funding id
-          example: 1
-        title:
-          type: string
-          description: The funding name
-          example: Scholarly funding
-        grant_code:
-          type: string
-          description: The grant code
-        funder_name:
-          type: string
-          description: Funder's name
-        is_user_defined:
-          type: integer
-          description: Return 1 whether the grant has been introduced manually, 0 otherwise
-        url:
-          type: string
-          description: The grant url
-          format: url
-          example: https://app.dimensions.ai/details/grant/1
-      x-tag: funding
-    AuthorsCreator:
-      required:
-      - authors
-      type: object
-      properties:
-        authors:
-          type: array
-          description: 'List of authors to be associated with the article. The list can contain the following fields: id, name, first_name, last_name, email, orcid_id. If an id is supplied, it will take priority and everything else will be ignored. For adding more authors use the specific authors endpoint.'
-          example:
-          - id: 12121
-          - id: 34345
-          - name: John Doe
-          items:
-            type: object
-            properties: {}
-      x-tag: articles
-    ArticleVersions:
-      required:
-      - url
-      - version
-      type: object
-      properties:
-        version:
-          type: integer
-          description: Version number
-          example: 1
-        url:
-          type: string
-          description: Api endpoint for the item version
-          format: url
-          example: https://api.figshare.com/v2/articles/2000005/versions/1
+          description: Reason for confidentiality
+          example: need to
       x-tag: articles
     Article:
       required:
@@ -2758,85 +2629,6 @@ components:
           description: Date when article was created
           example: '2017-05-18T11:49:03Z'
       x-tag: articles
-    FileId:
-      type: object
-      properties:
-        file_id:
-          type: integer
-          description: File ID
-          example: 123
-      x-tag: articles
-    LocationWarnings:
-      required:
-      - entity_id
-      - location
-      - warnings
-      type: object
-      properties:
-        entity_id:
-          type: integer
-          description: Figshare ID of the entity
-          example: 33334444
-        location:
-          type: string
-          description: Url for entity
-          format: url
-        warnings:
-          type: array
-          description: Issues encountered during the operation
-          items:
-            type: string
-      x-tag: common
-    FileCreator:
-      type: object
-      properties:
-        link:
-          type: string
-          description: Url for an existing file that will not be uploaded to Figshare
-          example: http://figshare.com/file.txt
-        md5:
-          type: string
-          description: MD5 sum pre-computed on client side.
-          example: 6c16e6e7d7587bd078e5117dda01d565
-        name:
-          type: string
-          description: File name including the extension; can be omitted only for linked files.
-          example: test.py
-        size:
-          type: integer
-          description: File size in bytes; can be omitted only for linked files.
-          example: 70
-        folder_path:
-          type: string
-          description: Unix-style directory path of the file; only available if the file was uploaded within a folder structure
-          example: /level1/level2/level3
-      x-tag: articles
-    PrivateLink:
-      required:
-      - expires_date
-      - html_location
-      - id
-      - is_active
-      type: object
-      properties:
-        id:
-          type: string
-          description: Private link id
-          example: 0cfb0dbeac92df445df4aba45f63fdc85fa0b9a888b64e157ce3c93b576aa300fb3621ef3a219515dd482
-        is_active:
-          type: boolean
-          description: True if private link is active
-          example: true
-        expires_date:
-          type: string
-          description: Date when link will expire
-          example: '2015-07-03T00:00:00'
-        html_location:
-          type: string
-          description: HTML url for private link
-          format: url
-          example: https://figshare.com/s/d5ec7a85bcd6dbe9d9b2
-      x-tag: articles
     PrivateLinkResponse:
       required:
       - html_location
@@ -2858,474 +2650,6 @@ components:
           description: Token for private link
           example: d5ec7a85bcd6dbe9d9b2
       x-tag: common
-    ArticleSearch:
-      properties:
-        resource_doi:
-          type: string
-          description: Only return articles with this resource_doi
-          example: 10.6084/m9.figshare.1407024
-        item_type:
-          type: integer
-          description: 'Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model'
-          example: 1
-        doi:
-          type: string
-          description: Only return articles with this doi
-          example: 10.6084/m9.figshare.1407024
-        handle:
-          type: string
-          description: Only return articles with this handle
-          example: 111084/m9.figshare.14074
-        project_id:
-          type: integer
-          description: Only return articles in this project
-          example: 1
-        order:
-          type: string
-          description: The field by which to order
-          example: published_date
-          default: created_date
-          enum:
-          - created_date
-          - published_date
-          - modified_date
-          - views
-          - shares
-          - downloads
-          - cites
-      allOf:
-      - $ref: '#/components/schemas/CommonSearch'
-      x-tag: articles
-    ArticleConfidentiality:
-      required:
-      - is_confidential
-      - reason
-      type: object
-      properties:
-        is_confidential:
-          type: boolean
-          description: True if article is confidential
-          example: true
-        reason:
-          type: string
-          description: Reason for confidentiality
-          example: need to
-      x-tag: articles
-    Timeline:
-      allOf:
-      - $ref: '#/components/schemas/TimelineUpdate'
-      x-tag: timeline
-    ArticleHandle:
-      required:
-      - handle
-      type: object
-      properties:
-        handle:
-          type: string
-          description: Reserved Handle
-          example: 11172/FK2.FIGSHARE.20345
-      x-tag: articles
-    Author:
-      required:
-      - first_name
-      - full_name
-      - id
-      - is_active
-      - last_name
-      - orcid_id
-      - url_name
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Author id
-          example: 97657
-        full_name:
-          type: string
-          description: Author full name
-          example: John Doe
-        first_name:
-          type: string
-          description: Author first name
-          example: John
-        last_name:
-          type: string
-          description: Author last name
-          example: Doe
-        is_active:
-          type: boolean
-          description: True if author has published items
-          example: false
-        url_name:
-          type: string
-          description: Author url name
-          example: John_Doe
-        orcid_id:
-          type: string
-          description: Author Orcid
-          example: 1234-5678-9123-1234
-      x-tag: authors
-    ArticleCreate:
-      required:
-      - title
-      type: object
-      properties:
-        title:
-          maxLength: 1000
-          minLength: 3
-          type: string
-          description: Title of article
-          example: Test article title
-        description:
-          maxLength: 20000
-          type: string
-          description: The article description. In a publisher case, usually this is the remote article description
-          example: Test description of article
-          default: ''
-        is_metadata_record:
-          type: boolean
-          description: True if article has no files
-          example: true
-        metadata_reason:
-          type: string
-          description: Article metadata reason
-          example: hosted somewhere else
-        tags:
-          type: array
-          description: List of tags to be associated with the article. Keywords can be used instead
-          example:
-          - tag1
-          - tag2
-          items:
-            type: string
-        keywords:
-          type: array
-          description: List of tags to be associated with the article. Tags can be used instead
-          example:
-          - tag1
-          - tag2
-          items:
-            type: string
-        references:
-          type: array
-          description: List of links to be associated with the article (e.g ["http://link1", "http://link2", "http://link3"])
-          example:
-          - http://figshare.com
-          - http://api.figshare.com
-          items:
-            type: string
-            format: link
-        related_materials:
-          type: array
-          description: List of related materials; supersedes references and resource DOI/title.
-          example:
-          - id: 10432
-            identifier: 10.6084/m9.figshare.1407024
-            identifier_type: DOI
-            relation: IsSupplementTo
-            title: Figshare for institutions brochure
-            is_linkout: false
-          items:
-            $ref: '#/components/schemas/RelatedMaterial'
-        categories:
-          type: array
-          description: List of category ids to be associated with the article(e.g [1, 23, 33, 66])
-          example:
-          - 1
-          - 10
-          - 11
-          items:
-            type: integer
-        categories_by_source_id:
-          type: array
-          description: List of category source ids to be associated with the article, supersedes the categories property
-          example:
-          - '300204'
-          - '400207'
-          items:
-            type: string
-        authors:
-          type: array
-          description: 'List of authors to be associated with the article. The list can contain the following fields: id, name, first_name, last_name, email, orcid_id. If an id is supplied, it will take priority and everything else will be ignored. For adding more authors use the specific authors endpoint.'
-          example:
-          - name: John Doe
-          - id: 1000008
-          items:
-            type: object
-            properties: {}
-        custom_fields:
-          type: object
-          properties: {}
-          description: List of key, values pairs to be associated with the article
-          example:
-            defined_key: value for it
-        custom_fields_list:
-          type: array
-          description: List of custom fields values, supersedes custom_fields parameter
-          items:
-            $ref: '#/components/schemas/CustomArticleFieldAdd'
-        defined_type:
-          type: string
-          description: <b>One of:</b> <code>figure</code> <code>online resource</code> <code>preprint</code> <code>book</code> <code>conference contribution</code> <code>media</code> <code>dataset</code> <code>poster</code> <code>journal contribution</code> <code>presentation</code> <code>thesis</code> <code>software</code>
-          example: media
-        funding:
-          type: string
-          description: Grant number or funding authority
-          default: ''
-        funding_list:
-          type: array
-          description: Funding creation / update items
-          items:
-            $ref: '#/components/schemas/FundingCreate'
-        license:
-          type: integer
-          description: License id for this article.
-          example: 1
-          default: 0
-        doi:
-          type: string
-          description: Not applicable for regular users. In an institutional case, make sure your group supports setting DOIs. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
-          default: ''
-        handle:
-          type: string
-          description: Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
-          default: ''
-        resource_doi:
-          type: string
-          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article DOI.
-          default: ''
-        resource_title:
-          type: string
-          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article title.
-          default: ''
-        timeline:
-          $ref: '#/components/schemas/TimelineUpdate'
-        group_id:
-          type: integer
-          description: Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
-      x-tag: articles
-    CategoriesCreator:
-      required:
-      - categories
-      type: object
-      properties:
-        categories:
-          type: array
-          description: List of category ids
-          example:
-          - 1
-          - 10
-          - 11
-          items:
-            type: integer
-            description: Id of category
-      x-tag: articles
-    ArticleEmbargo:
-      required:
-      - embargo_options
-      - embargo_reason
-      - embargo_title
-      - is_embargoed
-      type: object
-      properties:
-        is_embargoed:
-          type: boolean
-          description: True if embargoed
-          example: true
-        embargo_title:
-          type: string
-          description: Title for embargo
-          example: File(s) under embargo
-        embargo_reason:
-          type: string
-          description: Reason for embargo
-          example: ''
-        embargo_options:
-          type: array
-          description: List of embargo permissions that are associated with the article. If the type is logged_in and the group_ids list is empty, then the whole institution can see the article; if there are multiple group_ids, then only users that are under those groups can see the article.
-          example:
-          - id: 13
-            type: ip_range
-            group_ids: []
-            ip_name: bacau
-          - id: 12
-            type: logged_in
-            ip_name: ''
-            group_ids:
-            - 550
-            - 9448
-          items:
-            type: object
-            properties: {}
-      x-tag: articles
-    GroupEmbargoOptions:
-      required:
-      - id
-      - ip_name
-      - type
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Embargo option id
-          example: 364
-        type:
-          type: string
-          description: Embargo permission type
-          example: ip_range
-          enum:
-          - logged_in
-          - ip_range
-          - administrator
-        ip_name:
-          type: string
-          description: IP range name; value appears if type is ip_range
-          example: Figshare IP range
-      x-tag: institutions
-    RelatedMaterial:
-      type: object
-      properties:
-        id:
-          type: integer
-          description: The ID of the related material; can be used to add existing materials of the same account to items.
-          example: 10432
-        identifier:
-          type: string
-          description: The related material identifier (e.g., DOI, Handle, ISBN). Mandatory if creating a new material.
-          example: 10.6084/m9.figshare.1407024
-        title:
-          type: string
-          description: The related material title
-          example: 'Rooter: A Methodology for the Typical Unification of Access Points and Redundancy'
-        relation:
-          type: string
-          description: The relation between the item and the related material; defaults to 'References'. Mandatory if creating a new material.
-          example: IsSupplementTo
-          default: References
-          enum:
-          - IsCitedBy
-          - Cites
-          - IsSupplementTo
-          - IsSupplementedBy
-          - IsContinuedBy
-          - Continues
-          - Describes
-          - IsDescribedBy
-          - HasMetadata
-          - IsMetadataFor
-          - HasVersion
-          - IsVersionOf
-          - IsNewVersionOf
-          - IsPreviousVersionOf
-          - IsPartOf
-          - HasPart
-          - IsPublishedIn
-          - IsReferencedBy
-          - References
-          - IsDocumentedBy
-          - Documents
-          - IsCompiledBy
-          - Compiles
-          - IsVariantFormOf
-          - IsOriginalFormOf
-          - IsIdenticalTo
-          - IsReviewedBy
-          - Reviews
-          - IsDerivedFrom
-          - IsSourceOf
-          - IsRequiredBy
-          - Requires
-          - IsObsoletedBy
-          - Obsoletes
-        identifier_type:
-          type: string
-          description: The type of the identifier of the related material; defaults to 'URL'. Mandatory if creating a new material.
-          example: DOI
-          default: URL
-          enum:
-          - ARK
-          - arXiv
-          - bibcode
-          - DOI
-          - EAN13
-          - EISSN
-          - Handle
-          - IGSN
-          - ISBN
-          - ISSN
-          - ISTC
-          - LISSN
-          - LSID
-          - PMID
-          - PURL
-          - UPC
-          - URL
-          - URN
-          - w3id
-        is_linkout:
-          type: boolean
-          description: Flag for highlighting this related material in the call-out box
-          example: true
-        link:
-          type: string
-          description: The full hyperlink for the identifier. Automatically generated by Figshare.
-          readOnly: true
-          example: https://doi.org/10.6084/m9.figshare.1407024
-    PublicFile:
-      required:
-      - computed_md5
-      - download_url
-      - id
-      - is_link_only
-      - name
-      - size
-      - supplied_md5
-      type: object
-      properties:
-        id:
-          type: integer
-          description: File id
-          example: 3000002
-        name:
-          type: string
-          description: File name
-          example: test.xls
-        size:
-          type: integer
-          description: File size
-          example: 14848
-        is_link_only:
-          type: boolean
-          description: True if file is hosted somewhere else
-          example: false
-        download_url:
-          type: string
-          description: Url for file download
-          format: url
-          example: https://ndownloader.figshare.com/files/3000002
-        supplied_md5:
-          type: string
-          description: File supplied md5
-          example: 043a51806d646e88cafbf19e7b82846f
-        computed_md5:
-          type: string
-          description: File computed md5
-          example: 043a51806d646e88cafbf19e7b82846f
-        mimetype:
-          type: string
-          description: MIME Type of the file, it defaults to an empty string
-          example: application/pdf
-      x-tag: common
-    ArticleDOI:
-      required:
-      - doi
-      type: object
-      properties:
-        doi:
-          type: string
-          description: Reserved DOI
-          example: 10.5072/FK2.FIGSHARE.20345
-      x-tag: articles
     ArticleComplete:
       required:
       - authors
@@ -3374,197 +2698,254 @@ components:
       allOf:
       - $ref: '#/components/schemas/ProjectArticle'
       x-tag: articles
-    PrivateFile:
-      required:
-      - is_attached_to_public_version
-      - preview_state
-      - upload_token
-      - upload_url
-      - viewer_type
-      properties:
-        viewer_type:
-          type: string
-          description: File viewer type
-        preview_state:
-          type: string
-          description: File preview state
-          example: preview not available
-        upload_url:
-          type: string
-          description: Upload url for file
-          format: url
-          example: https://uploads.figshare.com
-        upload_token:
-          type: string
-          description: Token for file upload
-          example: 9dfc5fe3-d617-4d93-ac11-8afe7e984a4b
-        is_attached_to_public_version:
-          type: boolean
-          description: True if the file is attached to a public item version
-          example: true
-      allOf:
-      - $ref: '#/components/schemas/PublicFile'
-      x-tag: common
-    PrivateArticleSearch:
-      properties:
-        resource_id:
-          type: string
-          description: only return collections with this resource_id
-          example: '1407024'
-      allOf:
-      - $ref: '#/components/schemas/ArticleSearch'
-      x-tag: articles
-    ArticleUpdate:
+    FileCreator:
       type: object
       properties:
-        title:
-          maxLength: 1000
-          minLength: 3
+        link:
           type: string
-          description: Title of article
-          example: Test article title
-        description:
-          maxLength: 20000
+          description: Url for an existing file that will not be uploaded to Figshare
+          example: http://figshare.com/file.txt
+        md5:
           type: string
-          description: The article description. In a publisher case, usually this is the remote article description
-          example: Test description of article
-          default: ''
-        is_metadata_record:
-          type: boolean
-          description: True if article has no files
-          example: true
-        metadata_reason:
+          description: MD5 sum pre-computed on client side.
+          example: 6c16e6e7d7587bd078e5117dda01d565
+        name:
           type: string
-          description: Article metadata reason
-          example: hosted somewhere else
-        tags:
+          description: File name including the extension; can be omitted only for linked files.
+          example: test.py
+        size:
+          type: integer
+          description: File size in bytes; can be omitted only for linked files.
+          example: 70
+        folder_path:
+          type: string
+          description: Unix-style directory path of the file; only available if the file was uploaded within a folder structure
+          example: /level1/level2/level3
+      x-tag: articles
+    ArticleSearch:
+      properties:
+        resource_doi:
+          type: string
+          description: Only return articles with this resource_doi
+          example: 10.6084/m9.figshare.1407024
+        item_type:
+          type: integer
+          description: 'Only return articles with the respective type. Mapping for item_type is: 1 - Figure, 2 - Media, 3 - Dataset, 5 - Poster, 6 - Journal contribution, 7 - Presentation, 8 - Thesis, 9 - Software, 11 - Online resource, 12 - Preprint, 13 - Book, 14 - Conference contribution, 15 - Chapter, 16 - Peer review, 17 - Educational resource, 18 - Report, 19 - Standard, 20 - Composition, 21 - Funding, 22 - Physical object, 23 - Data management plan, 24 - Workflow, 25 - Monograph, 26 - Performance, 27 - Event, 28 - Service, 29 - Model'
+          example: 1
+        doi:
+          type: string
+          description: Only return articles with this doi
+          example: 10.6084/m9.figshare.1407024
+        handle:
+          type: string
+          description: Only return articles with this handle
+          example: 111084/m9.figshare.14074
+        project_id:
+          type: integer
+          description: Only return articles in this project
+          example: 1
+        order:
+          type: string
+          description: The field by which to order
+          example: published_date
+          default: created_date
+          enum:
+          - created_date
+          - published_date
+          - modified_date
+          - views
+          - shares
+          - downloads
+          - cites
+      allOf:
+      - $ref: '#/components/schemas/CommonSearch'
+      x-tag: articles
+    ArticleVersionUpdate:
+      type: object
+      properties:
+        supplementary_fields:
           type: array
-          description: List of tags to be associated with the article. Keywords can be used instead
+          description: List of supplementary fields to be associated with the article version
           example:
-          - tag1
-          - tag2
-          items:
-            type: string
-        keywords:
-          type: array
-          description: List of tags to be associated with the article. Tags can be used instead
-          example:
-          - tag1
-          - tag2
-          items:
-            type: string
-        references:
-          type: array
-          description: List of links to be associated with the article (e.g ["http://link1", "http://link2", "http://link3"])
-          example:
-          - http://figshare.com
-          - http://api.figshare.com
-          items:
-            type: string
-            format: link
-        related_materials:
-          type: array
-          description: List of related materials; supersedes references and resource DOI/title.
-          example:
-          - id: 10432
-            identifier: 10.6084/m9.figshare.1407024
-            identifier_type: DOI
-            relation: IsSupplementTo
-            title: Figshare for institutions brochure
-            is_linkout: false
-          items:
-            $ref: '#/components/schemas/RelatedMaterial'
-        categories:
-          type: array
-          description: List of category ids to be associated with the article(e.g [1, 23, 33, 66])
-          example:
-          - 1
-          - 10
-          - 11
-          items:
-            type: integer
-        categories_by_source_id:
-          type: array
-          description: List of category source ids to be associated with the article, supersedes the categories property
-          example:
-          - '300204'
-          - '400207'
-          items:
-            type: string
-        authors:
-          type: array
-          description: 'List of authors to be associated with the article. The list can contain the following fields: id, name, first_name, last_name, email, orcid_id. If an id is supplied, it will take priority and everything else will be ignored. For adding more authors use the specific authors endpoint.'
-          example:
-          - name: John Doe
-          - id: 1000008
+          - name: abc
+            value: def
+          - name: fname
+            value: fvalue
           items:
             type: object
             properties: {}
-        custom_fields:
+        internal_metadata:
           type: object
           properties: {}
-          description: List of key, values pairs to be associated with the article
+          description: List of supplementary fields to be associated with the article version
           example:
-            defined_key: value for it
-        custom_fields_list:
-          type: array
-          description: List of custom fields values, supersedes custom_fields parameter
-          items:
-            $ref: '#/components/schemas/CustomArticleFieldAdd'
-        defined_type:
-          type: string
-          description: <b>One of:</b> <code>figure</code> <code>online resource</code> <code>preprint</code> <code>book</code> <code>conference contribution</code> <code>media</code> <code>dataset</code> <code>poster</code> <code>journal contribution</code> <code>presentation</code> <code>thesis</code> <code>software</code>
-          example: media
-        funding:
-          type: string
-          description: Grant number or funding authority
-          default: ''
-        funding_list:
-          type: array
-          description: Funding creation / update items
-          items:
-            $ref: '#/components/schemas/FundingCreate'
-        license:
-          type: integer
-          description: License id for this article.
-          example: 1
-          default: 0
-        doi:
-          type: string
-          description: Not applicable for regular users. In an institutional case, make sure your group supports setting DOIs. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
-          default: ''
-        handle:
-          type: string
-          description: Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
-          default: ''
-        resource_doi:
-          type: string
-          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article DOI.
-          default: ''
-        resource_title:
-          type: string
-          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article title.
-          default: ''
-        timeline:
-          $ref: '#/components/schemas/TimelineUpdate'
-        download_disabled:
-          type: boolean
-          description: If true, downloading of files for this article is disabled
-          example: false
-        group_id:
-          type: integer
-          description: Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
-      x-tag: articles
-    Location:
+            curation_review_date: '2021-11-16T13:03:38'
+            export_pdf_download_url: null
+      x-tag: article_version
+    ArticleCompletePrivate:
       required:
-      - location
+      - account_id
+      - curation_status
+      properties:
+        account_id:
+          type: integer
+          description: ID of the account owning the article
+          example: 1000001
+        curation_status:
+          type: string
+          description: Curation status of the article
+          example: approved
+      allOf:
+      - $ref: '#/components/schemas/ArticleComplete'
+      x-tag: articles
+    CommonSearch:
       type: object
       properties:
-        location:
+        search_for:
           type: string
-          description: Url for item
-          format: url
+          description: Search term
+          example: figshare
+        page:
+          maximum: 5000
+          minimum: 1
+          type: integer
+          description: Page number. Used for pagination with page_size
+          example: 1
+        page_size:
+          maximum: 1000
+          minimum: 1
+          type: integer
+          description: The number of results included on a page. Used for pagination with page
+          example: 10
+          default: 10
+        limit:
+          maximum: 1000
+          minimum: 1
+          type: integer
+          description: Number of results included on a page. Used for pagination with query
+          example: 10
+        offset:
+          maximum: 5000
+          minimum: 0
+          type: integer
+          description: Where to start the listing (the offset of the first result). Used for pagination with limit
+          example: 0
+        order_direction:
+          type: string
+          description: Direction of ordering
+          example: desc
+          default: desc
+          enum:
+          - asc
+          - desc
+        institution:
+          type: integer
+          description: only return collections from this institution
+          example: 2000013
+        published_since:
+          type: string
+          description: Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD or date-time(ISO 8601) YYYY-MM-DDTHH:mm:ssZ
+          example: '2017-12-22'
+        modified_since:
+          type: string
+          description: Filter by article modified date. Will only return articles modified after the date. date(ISO 8601) YYYY-MM-DD or date-time(ISO 8601) YYYY-MM-DDTHH:mm:ssZ
+          example: '2017-12-22'
+        group:
+          type: integer
+          description: only return collections from this group
+          example: 2000013
       x-tag: common
+    ArticleEmbargoUpdater:
+      required:
+      - embargo_date
+      - embargo_type
+      - is_embargoed
+      type: object
+      properties:
+        is_embargoed:
+          type: boolean
+          description: Embargo status
+          example: true
+        embargo_date:
+          type: string
+          description: Date when the embargo expires and the article gets published, '0' value will set up permanent embargo
+          example: '2018-05-22T04:04:04'
+        embargo_type:
+          type: string
+          description: 'Embargo can be enabled at the article or the file level. Possible values: article, file'
+          example: file
+          enum:
+          - article
+          - file
+        embargo_title:
+          type: string
+          description: Title for embargo
+          example: File(s) under embargo
+        embargo_reason:
+          type: string
+          description: Reason for setting embargo
+          example: ''
+        embargo_options:
+          type: array
+          description: List of embargo permissions to be associated with the article. The list must contain `id` and can also contain `group_ids`(a field that only applies to 'logged_in' permissions). The new list replaces old options in the database, and an empty list removes all permissions for this article. Administration permission has to be set up alone but logged in and IP range permissions can be set up together.
+          example:
+          - id: 1321
+          - id: 3345
+          - id: 54621
+            group_ids:
+            - 4332
+            - 5433
+            - 678
+          items:
+            type: object
+            properties: {}
+      x-tag: articles
+    ArticleDOI:
+      required:
+      - doi
+      type: object
+      properties:
+        doi:
+          type: string
+          description: Reserved DOI
+          example: 10.5072/FK2.FIGSHARE.20345
+      x-tag: articles
+    TimelineUpdate:
+      type: object
+      properties:
+        firstOnline:
+          type: string
+          description: Online posted date
+          example: '2015-12-31'
+        publisherPublication:
+          type: string
+          description: Publish date
+          example: '2015-12-31'
+        publisherAcceptance:
+          type: string
+          description: Date when the item was accepted for publication
+          example: '2015-12-31'
+      x-tag: timeline_update
+    CustomArticleFieldAdd:
+      required:
+      - name
+      - value
+      type: object
+      properties:
+        name:
+          type: string
+          description: Custom  metadata name
+          example: key
+        value:
+          description: Custom metadata value (can be either a string, an array of strings, or empty)
+          example: value
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: string
+          - type: object
+      x-tag: articles
     ProjectArticle:
       required:
       - categories
@@ -3708,107 +3089,261 @@ components:
       allOf:
       - $ref: '#/components/schemas/Article'
       x-tag: articles
-    CustomArticleFieldAdd:
+    FundingInformation:
       required:
-      - name
-      - value
+      - funder_name
+      - grant_code
+      - id
+      - is_user_defined
+      - title
+      - url
       type: object
       properties:
-        name:
-          type: string
-          description: Custom  metadata name
-          example: key
-        value:
-          description: Custom metadata value (can be either a string, an array of strings, or empty)
-          example: value
-          oneOf:
-          - type: string
-          - type: array
-            items:
-              type: string
-          - type: object
-      x-tag: articles
-    CommonSearch:
-      type: object
-      properties:
-        search_for:
-          type: string
-          description: Search term
-          example: figshare
-        page:
-          maximum: 5000
-          minimum: 1
+        id:
           type: integer
-          description: Page number. Used for pagination with page_size
+          description: Funding id
           example: 1
-        page_size:
-          maximum: 1000
-          minimum: 1
-          type: integer
-          description: The number of results included on a page. Used for pagination with page
-          example: 10
-          default: 10
-        limit:
-          maximum: 1000
-          minimum: 1
-          type: integer
-          description: Number of results included on a page. Used for pagination with query
-          example: 10
-        offset:
-          maximum: 5000
-          minimum: 0
-          type: integer
-          description: Where to start the listing (the offset of the first result). Used for pagination with limit
-          example: 0
-        order_direction:
+        title:
           type: string
-          description: Direction of ordering
-          example: desc
-          default: desc
+          description: The funding name
+          example: Scholarly funding
+        grant_code:
+          type: string
+          description: The grant code
+        funder_name:
+          type: string
+          description: Funder's name
+        is_user_defined:
+          type: integer
+          description: Return 1 whether the grant has been introduced manually, 0 otherwise
+        url:
+          type: string
+          description: The grant url
+          format: url
+          example: https://app.dimensions.ai/details/grant/1
+      x-tag: funding
+    AccountReport:
+      required:
+      - account_id
+      - created_date
+      - download_url
+      - group_id
+      - id
+      - status
+      type: object
+      properties:
+        id:
+          type: integer
+          description: A unique ID for the AccountRecord
+        account_id:
+          type: integer
+          description: The ID of the account which generated this report.
+        created_date:
+          type: string
+          description: Date when the AccountReport was requested
+          example: '2017-05-15T15:12:26Z'
+        status:
+          type: string
+          description: Status of the report
           enum:
-          - asc
-          - desc
-        institution:
-          type: integer
-          description: only return collections from this institution
-          example: 2000013
-        published_since:
+          - missing
+          - pending
+          - done
+        download_url:
           type: string
-          description: Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD or date-time(ISO 8601) YYYY-MM-DDTHH:mm:ssZ
-          example: '2017-12-22'
-        modified_since:
-          type: string
-          description: Filter by article modified date. Will only return articles modified after the date. date(ISO 8601) YYYY-MM-DD or date-time(ISO 8601) YYYY-MM-DDTHH:mm:ssZ
-          example: '2017-12-22'
-        group:
+          description: The download link for the generated XLSX
+          format: url
+          example: https://some.com/storage/path/123/report-456.xlsx
+        group_id:
           type: integer
-          description: only return collections from this group
-          example: 2000013
+          description: The group ID that was used to filter the report, if any.
+    Location:
+      required:
+      - location
+      type: object
+      properties:
+        location:
+          type: string
+          description: Url for item
+          format: url
       x-tag: common
-    PrivateLinkCreator:
+    ArticleCreate:
+      required:
+      - title
       type: object
       properties:
-        expires_date:
+        title:
+          maxLength: 1000
+          minLength: 3
           type: string
-          description: Date when this private link should expire - optional. By default private links expire in 365 days.
-          example: '2018-02-22 22:22:22'
+          description: Title of article
+          example: Test article title
+        description:
+          maxLength: 20000
+          type: string
+          description: The article description. In a publisher case, usually this is the remote article description
+          example: Test description of article
+          default: ''
+        is_metadata_record:
+          type: boolean
+          description: True if article has no files
+          example: true
+        metadata_reason:
+          type: string
+          description: Article metadata reason
+          example: hosted somewhere else
+        tags:
+          type: array
+          description: List of tags to be associated with the article. Keywords can be used instead
+          example:
+          - tag1
+          - tag2
+          items:
+            type: string
+        keywords:
+          type: array
+          description: List of tags to be associated with the article. Tags can be used instead
+          example:
+          - tag1
+          - tag2
+          items:
+            type: string
+        references:
+          type: array
+          description: List of links to be associated with the article (e.g ["http://link1", "http://link2", "http://link3"])
+          example:
+          - http://figshare.com
+          - http://api.figshare.com
+          items:
+            type: string
+            format: link
+        related_materials:
+          type: array
+          description: List of related materials; supersedes references and resource DOI/title.
+          example:
+          - id: 10432
+            identifier: 10.6084/m9.figshare.1407024
+            identifier_type: DOI
+            relation: IsSupplementTo
+            title: Figshare for institutions brochure
+            is_linkout: false
+          items:
+            $ref: '#/components/schemas/RelatedMaterial'
+        categories:
+          type: array
+          description: List of category ids to be associated with the article(e.g [1, 23, 33, 66])
+          example:
+          - 1
+          - 10
+          - 11
+          items:
+            type: integer
+        categories_by_source_id:
+          type: array
+          description: List of category source ids to be associated with the article, supersedes the categories property
+          example:
+          - '300204'
+          - '400207'
+          items:
+            type: string
+        authors:
+          type: array
+          description: 'List of authors to be associated with the article. The list can contain the following fields: id, name, first_name, last_name, email, orcid_id. If an id is supplied, it will take priority and everything else will be ignored. For adding more authors use the specific authors endpoint.'
+          example:
+          - name: John Doe
+          - id: 1000008
+          items:
+            type: object
+            properties: {}
+        custom_fields:
+          type: object
+          properties: {}
+          description: List of key, values pairs to be associated with the article
+          example:
+            defined_key: value for it
+        custom_fields_list:
+          type: array
+          description: List of custom fields values, supersedes custom_fields parameter
+          items:
+            $ref: '#/components/schemas/CustomArticleFieldAdd'
+        defined_type:
+          type: string
+          description: <b>One of:</b> <code>figure</code> <code>online resource</code> <code>preprint</code> <code>book</code> <code>conference contribution</code> <code>media</code> <code>dataset</code> <code>poster</code> <code>journal contribution</code> <code>presentation</code> <code>thesis</code> <code>software</code>
+          example: media
+        funding:
+          type: string
+          description: Grant number or funding authority
+          default: ''
+        funding_list:
+          type: array
+          description: Funding creation / update items
+          items:
+            $ref: '#/components/schemas/FundingCreate'
+        license:
+          type: integer
+          description: License id for this article.
+          example: 1
+          default: 0
+        doi:
+          type: string
+          description: Not applicable for regular users. In an institutional case, make sure your group supports setting DOIs. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
+          default: ''
+        handle:
+          type: string
+          description: Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
+          default: ''
+        resource_doi:
+          type: string
+          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article DOI.
+          default: ''
+        resource_title:
+          type: string
+          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article title.
+          default: ''
+        timeline:
+          $ref: '#/components/schemas/TimelineUpdate'
+        group_id:
+          type: integer
+          description: Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
       x-tag: articles
-    TimelineUpdate:
+    ArticleEmbargo:
+      required:
+      - embargo_options
+      - embargo_reason
+      - embargo_title
+      - is_embargoed
       type: object
       properties:
-        firstOnline:
+        is_embargoed:
+          type: boolean
+          description: True if embargoed
+          example: true
+        embargo_title:
           type: string
-          description: Online posted date
-          example: '2015-12-31'
-        publisherPublication:
+          description: Title for embargo
+          example: File(s) under embargo
+        embargo_reason:
           type: string
-          description: Publish date
-          example: '2015-12-31'
-        publisherAcceptance:
-          type: string
-          description: Date when the item was accepted for publication
-          example: '2015-12-31'
-      x-tag: timeline_update
+          description: Reason for embargo
+          example: ''
+        embargo_options:
+          type: array
+          description: List of embargo permissions that are associated with the article. If the type is logged_in and the group_ids list is empty, then the whole institution can see the article; if there are multiple group_ids, then only users that are under those groups can see the article.
+          example:
+          - id: 13
+            type: ip_range
+            group_ids: []
+            ip_name: bacau
+          - id: 12
+            type: logged_in
+            ip_name: ''
+            group_ids:
+            - 550
+            - 9448
+          items:
+            type: object
+            properties: {}
+      x-tag: articles
     CustomArticleField:
       required:
       - field_type
@@ -3857,6 +3392,192 @@ components:
           description: Whether the field is mandatory or not
           example: false
       x-tag: articles
+    CategoriesCreator:
+      required:
+      - categories
+      type: object
+      properties:
+        categories:
+          type: array
+          description: List of category ids
+          example:
+          - 1
+          - 10
+          - 11
+          items:
+            type: integer
+            description: Id of category
+      x-tag: articles
+    LocationWarnings:
+      required:
+      - entity_id
+      - location
+      - warnings
+      type: object
+      properties:
+        entity_id:
+          type: integer
+          description: Figshare ID of the entity
+          example: 33334444
+        location:
+          type: string
+          description: Url for entity
+          format: url
+        warnings:
+          type: array
+          description: Issues encountered during the operation
+          items:
+            type: string
+      x-tag: common
+    FileId:
+      type: object
+      properties:
+        file_id:
+          type: integer
+          description: File ID
+          example: 123
+      x-tag: articles
+    ArticleUpdate:
+      type: object
+      properties:
+        title:
+          maxLength: 1000
+          minLength: 3
+          type: string
+          description: Title of article
+          example: Test article title
+        description:
+          maxLength: 20000
+          type: string
+          description: The article description. In a publisher case, usually this is the remote article description
+          example: Test description of article
+          default: ''
+        is_metadata_record:
+          type: boolean
+          description: True if article has no files
+          example: true
+        metadata_reason:
+          type: string
+          description: Article metadata reason
+          example: hosted somewhere else
+        tags:
+          type: array
+          description: List of tags to be associated with the article. Keywords can be used instead
+          example:
+          - tag1
+          - tag2
+          items:
+            type: string
+        keywords:
+          type: array
+          description: List of tags to be associated with the article. Tags can be used instead
+          example:
+          - tag1
+          - tag2
+          items:
+            type: string
+        references:
+          type: array
+          description: List of links to be associated with the article (e.g ["http://link1", "http://link2", "http://link3"])
+          example:
+          - http://figshare.com
+          - http://api.figshare.com
+          items:
+            type: string
+            format: link
+        related_materials:
+          type: array
+          description: List of related materials; supersedes references and resource DOI/title.
+          example:
+          - id: 10432
+            identifier: 10.6084/m9.figshare.1407024
+            identifier_type: DOI
+            relation: IsSupplementTo
+            title: Figshare for institutions brochure
+            is_linkout: false
+          items:
+            $ref: '#/components/schemas/RelatedMaterial'
+        categories:
+          type: array
+          description: List of category ids to be associated with the article(e.g [1, 23, 33, 66])
+          example:
+          - 1
+          - 10
+          - 11
+          items:
+            type: integer
+        categories_by_source_id:
+          type: array
+          description: List of category source ids to be associated with the article, supersedes the categories property
+          example:
+          - '300204'
+          - '400207'
+          items:
+            type: string
+        authors:
+          type: array
+          description: 'List of authors to be associated with the article. The list can contain the following fields: id, name, first_name, last_name, email, orcid_id. If an id is supplied, it will take priority and everything else will be ignored. For adding more authors use the specific authors endpoint.'
+          example:
+          - name: John Doe
+          - id: 1000008
+          items:
+            type: object
+            properties: {}
+        custom_fields:
+          type: object
+          properties: {}
+          description: List of key, values pairs to be associated with the article
+          example:
+            defined_key: value for it
+        custom_fields_list:
+          type: array
+          description: List of custom fields values, supersedes custom_fields parameter
+          items:
+            $ref: '#/components/schemas/CustomArticleFieldAdd'
+        defined_type:
+          type: string
+          description: <b>One of:</b> <code>figure</code> <code>online resource</code> <code>preprint</code> <code>book</code> <code>conference contribution</code> <code>media</code> <code>dataset</code> <code>poster</code> <code>journal contribution</code> <code>presentation</code> <code>thesis</code> <code>software</code>
+          example: media
+        funding:
+          type: string
+          description: Grant number or funding authority
+          default: ''
+        funding_list:
+          type: array
+          description: Funding creation / update items
+          items:
+            $ref: '#/components/schemas/FundingCreate'
+        license:
+          type: integer
+          description: License id for this article.
+          example: 1
+          default: 0
+        doi:
+          type: string
+          description: Not applicable for regular users. In an institutional case, make sure your group supports setting DOIs. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
+          default: ''
+        handle:
+          type: string
+          description: Not applicable for regular users. In an institutional case, make sure your group supports setting Handles. This setting is applied by figshare via opening a ticket through our support/helpdesk system.
+          default: ''
+        resource_doi:
+          type: string
+          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article DOI.
+          default: ''
+        resource_title:
+          type: string
+          description: Deprecated by related materials. Not applicable to regular users. In a publisher case, this is the publisher article title.
+          default: ''
+        timeline:
+          $ref: '#/components/schemas/TimelineUpdate'
+        download_disabled:
+          type: boolean
+          description: If true, downloading of files for this article is disabled
+          example: false
+        group_id:
+          type: integer
+          description: Not applicable to regular users. This field is reserved to institutions/publishers with access to assign to specific groups
+      x-tag: articles
     License:
       required:
       - name
@@ -3878,69 +3599,243 @@ components:
           format: url
           example: http://creativecommons.org/licenses/by/4.0/
       x-tag: institutions
-    ArticleWithProject:
-      required:
-      - project_id
-      properties:
-        project_id:
-          type: integer
-          description: Project id for this article.
-          example: 1
-          default: 0
-      allOf:
-      - $ref: '#/components/schemas/Article'
-      x-tag: articles_with_project
-    LocationWarningsUpdate:
-      required:
-      - location
-      - warnings
-      type: object
-      properties:
-        location:
-          type: string
-          description: Url for entity
-          format: url
-        warnings:
-          type: array
-          description: Issues encountered during the operation
-          items:
-            type: string
-      x-tag: common
-    AccountReport:
-      required:
-      - account_id
-      - created_date
-      - download_url
-      - group_id
-      - id
-      - status
+    RelatedMaterial:
       type: object
       properties:
         id:
           type: integer
-          description: A unique ID for the AccountRecord
-        account_id:
-          type: integer
-          description: The ID of the account which generated this report.
-        created_date:
+          description: The ID of the related material; can be used to add existing materials of the same account to items.
+          example: 10432
+        identifier:
           type: string
-          description: Date when the AccountReport was requested
-          example: '2017-05-15T15:12:26Z'
-        status:
+          description: The related material identifier (e.g., DOI, Handle, ISBN). Mandatory if creating a new material.
+          example: 10.6084/m9.figshare.1407024
+        title:
           type: string
-          description: Status of the report
+          description: The related material title
+          example: 'Rooter: A Methodology for the Typical Unification of Access Points and Redundancy'
+        relation:
+          type: string
+          description: The relation between the item and the related material; defaults to 'References'. Mandatory if creating a new material.
+          example: IsSupplementTo
+          default: References
           enum:
-          - missing
-          - pending
-          - done
-        download_url:
+          - IsCitedBy
+          - Cites
+          - IsSupplementTo
+          - IsSupplementedBy
+          - IsContinuedBy
+          - Continues
+          - Describes
+          - IsDescribedBy
+          - HasMetadata
+          - IsMetadataFor
+          - HasVersion
+          - IsVersionOf
+          - IsNewVersionOf
+          - IsPreviousVersionOf
+          - IsPartOf
+          - HasPart
+          - IsPublishedIn
+          - IsReferencedBy
+          - References
+          - IsDocumentedBy
+          - Documents
+          - IsCompiledBy
+          - Compiles
+          - IsVariantFormOf
+          - IsOriginalFormOf
+          - IsIdenticalTo
+          - IsReviewedBy
+          - Reviews
+          - IsDerivedFrom
+          - IsSourceOf
+          - IsRequiredBy
+          - Requires
+          - IsObsoletedBy
+          - Obsoletes
+        identifier_type:
           type: string
-          description: The download link for the generated XLSX
-          format: url
-          example: https://some.com/storage/path/123/report-456.xlsx
-        group_id:
+          description: The type of the identifier of the related material; defaults to 'URL'. Mandatory if creating a new material.
+          example: DOI
+          default: URL
+          enum:
+          - ARK
+          - arXiv
+          - bibcode
+          - DOI
+          - EAN13
+          - EISSN
+          - Handle
+          - IGSN
+          - ISBN
+          - ISSN
+          - ISTC
+          - LISSN
+          - LSID
+          - PMID
+          - PURL
+          - UPC
+          - URL
+          - URN
+          - w3id
+        is_linkout:
+          type: boolean
+          description: Flag for highlighting this related material in the call-out box
+          example: true
+        link:
+          type: string
+          description: The full hyperlink for the identifier. Automatically generated by Figshare.
+          readOnly: true
+          example: https://doi.org/10.6084/m9.figshare.1407024
+    ArticleVersions:
+      required:
+      - url
+      - version
+      type: object
+      properties:
+        version:
           type: integer
-          description: The group ID that was used to filter the report, if any.
+          description: Version number
+          example: 1
+        url:
+          type: string
+          description: Api endpoint for the item version
+          format: url
+          example: https://api.figshare.com/v2/articles/2000005/versions/1
+      x-tag: articles
+    GroupEmbargoOptions:
+      required:
+      - id
+      - ip_name
+      - type
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Embargo option id
+          example: 364
+        type:
+          type: string
+          description: Embargo permission type
+          example: ip_range
+          enum:
+          - logged_in
+          - ip_range
+          - administrator
+        ip_name:
+          type: string
+          description: IP range name; value appears if type is ip_range
+          example: Figshare IP range
+      x-tag: institutions
+    Timeline:
+      allOf:
+      - $ref: '#/components/schemas/TimelineUpdate'
+      x-tag: timeline
+    Category:
+      required:
+      - id
+      - parent_id
+      - path
+      - source_id
+      - taxonomy_id
+      - title
+      type: object
+      properties:
+        parent_id:
+          type: integer
+          description: Parent category
+          example: 1
+        id:
+          type: integer
+          description: Category id
+          example: 11
+        title:
+          type: string
+          description: Category title
+          example: Anatomy
+        path:
+          type: string
+          description: Path to all ancestor ids
+          example: /450/1024/6532
+        source_id:
+          type: string
+          description: ID in original standard taxonomy
+          example: '300204'
+        taxonomy_id:
+          type: integer
+          description: Internal id of taxonomy the category is part of
+          example: 4
+      x-tag: common
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
+      x-tag: common
+    ArticleUnpublishData:
+      required:
+      - reason
+      type: object
+      properties:
+        reason:
+          maxLength: 500
+          minLength: 5
+          type: string
+          description: Reason of article unpublishing
+          example: Unpublish article reason
+      x-tag: articles
+    PrivateFile:
+      required:
+      - is_attached_to_public_version
+      - preview_state
+      - upload_token
+      - upload_url
+      - viewer_type
+      properties:
+        viewer_type:
+          type: string
+          description: File viewer type
+        preview_state:
+          type: string
+          description: File preview state
+          example: preview not available
+        upload_url:
+          type: string
+          description: Upload url for file
+          format: url
+          example: https://uploads.figshare.com
+        upload_token:
+          type: string
+          description: Token for file upload
+          example: 9dfc5fe3-d617-4d93-ac11-8afe7e984a4b
+        is_attached_to_public_version:
+          type: boolean
+          description: True if the file is attached to a public item version
+          example: true
+      allOf:
+      - $ref: '#/components/schemas/PublicFile'
+      x-tag: common
+    AuthorsCreator:
+      required:
+      - authors
+      type: object
+      properties:
+        authors:
+          type: array
+          description: 'List of authors to be associated with the article. The list can contain the following fields: id, name, first_name, last_name, email, orcid_id. If an id is supplied, it will take priority and everything else will be ignored. For adding more authors use the specific authors endpoint.'
+          example:
+          - id: 12121
+          - id: 34345
+          - name: John Doe
+          items:
+            type: object
+            properties: {}
+      x-tag: articles
     Resource:
       type: object
       properties:
@@ -3978,21 +3873,34 @@ components:
           example: 1
           default: 0
       x-tag: resource
-    ArticleCompletePrivate:
-      required:
-      - account_id
-      - curation_status
+    PrivateArticleSearch:
       properties:
-        account_id:
-          type: integer
-          description: ID of the account owning the article
-          example: 1000001
-        curation_status:
+        resource_id:
           type: string
-          description: Curation status of the article
-          example: approved
+          description: only return collections with this resource_id
+          example: '1407024'
       allOf:
-      - $ref: '#/components/schemas/ArticleComplete'
+      - $ref: '#/components/schemas/ArticleSearch'
+      x-tag: articles
+    ArticleWithProject:
+      required:
+      - project_id
+      properties:
+        project_id:
+          type: integer
+          description: Project id for this article.
+          example: 1
+          default: 0
+      allOf:
+      - $ref: '#/components/schemas/Article'
+      x-tag: articles_with_project
+    PrivateLinkCreator:
+      type: object
+      properties:
+        expires_date:
+          type: string
+          description: Date when this private link should expire - optional. By default private links expire in 365 days.
+          example: '2018-02-22 22:22:22'
       x-tag: articles
     FundingCreate:
       type: object
@@ -4004,41 +3912,93 @@ components:
           type: string
           description: The title of the new user created funding
       x-tag: funding
-    Category:
+    PublicFile:
       required:
+      - computed_md5
+      - download_url
       - id
-      - parent_id
-      - path
-      - source_id
-      - taxonomy_id
-      - title
+      - is_link_only
+      - name
+      - size
+      - supplied_md5
       type: object
       properties:
-        parent_id:
-          type: integer
-          description: Parent category
-          example: 1
         id:
           type: integer
-          description: Category id
-          example: 11
-        title:
+          description: File id
+          example: 3000002
+        name:
           type: string
-          description: Category title
-          example: Anatomy
-        path:
-          type: string
-          description: Path to all ancestor ids
-          example: /450/1024/6532
-        source_id:
-          type: string
-          description: ID in original standard taxonomy
-          example: '300204'
-        taxonomy_id:
+          description: File name
+          example: test.xls
+        size:
           type: integer
-          description: Internal id of taxonomy the category is part of
-          example: 4
+          description: File size
+          example: 14848
+        is_link_only:
+          type: boolean
+          description: True if file is hosted somewhere else
+          example: false
+        download_url:
+          type: string
+          description: Url for file download
+          format: url
+          example: https://ndownloader.figshare.com/files/3000002
+        supplied_md5:
+          type: string
+          description: File supplied md5
+          example: 043a51806d646e88cafbf19e7b82846f
+        computed_md5:
+          type: string
+          description: File computed md5
+          example: 043a51806d646e88cafbf19e7b82846f
+        mimetype:
+          type: string
+          description: MIME Type of the file, it defaults to an empty string
+          example: application/pdf
       x-tag: common
+    LocationWarningsUpdate:
+      required:
+      - location
+      - warnings
+      type: object
+      properties:
+        location:
+          type: string
+          description: Url for entity
+          format: url
+        warnings:
+          type: array
+          description: Issues encountered during the operation
+          items:
+            type: string
+      x-tag: common
+    PrivateLink:
+      required:
+      - expires_date
+      - html_location
+      - id
+      - is_active
+      type: object
+      properties:
+        id:
+          type: string
+          description: Private link id
+          example: 0cfb0dbeac92df445df4aba45f63fdc85fa0b9a888b64e157ce3c93b576aa300fb3621ef3a219515dd482
+        is_active:
+          type: boolean
+          description: True if private link is active
+          example: true
+        expires_date:
+          type: string
+          description: Date when link will expire
+          example: '2015-07-03T00:00:00'
+        html_location:
+          type: string
+          description: HTML url for private link
+          format: url
+          example: https://figshare.com/s/d5ec7a85bcd6dbe9d9b2
+      x-tag: articles
     ConfidentialityCreator:
       required:
       - reason
@@ -4047,6 +4007,46 @@ components:
         reason:
           type: string
           description: Reason for confidentiality
+    Author:
+      required:
+      - first_name
+      - full_name
+      - id
+      - is_active
+      - last_name
+      - orcid_id
+      - url_name
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Author id
+          example: 97657
+        full_name:
+          type: string
+          description: Author full name
+          example: John Doe
+        first_name:
+          type: string
+          description: Author first name
+          example: John
+        last_name:
+          type: string
+          description: Author last name
+          example: Doe
+        is_active:
+          type: boolean
+          description: True if author has published items
+          example: false
+        url_name:
+          type: string
+          description: Author url name
+          example: John_Doe
+        orcid_id:
+          type: string
+          description: Author Orcid
+          example: 1234-5678-9123-1234
+      x-tag: authors
   securitySchemes:
     OAuth2:
       type: oauth2

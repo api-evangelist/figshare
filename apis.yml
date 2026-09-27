@@ -38,6 +38,17 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/figshare.png
 tags:
   - Research Data
+  - Research Repository
+  - Open Science
+  - DOI
+  - Datasets
+  - Academic
+  - File Storage
+  - Open Access
+  - Figshare
+  - OAI-PMH
+tags_raw:
+  - Research Data
   - Data Repository
   - Open Science
   - DOI
@@ -46,13 +57,15 @@ tags:
   - File Storage
   - Open Access
   - Figshare
+  - OAI-PMH
+  - Research Repository
 url: https://raw.githubusercontent.com/api-evangelist/figshare/refs/heads/main/apis.yml
 created: '2026-06-12'
 modified: '2026-06-12'
 specificationVersion: '0.23'
 apis:
 - aid: figshare:figshare-altmetric-api
-  name: Figshare altmetric API
+  name: Figshare Altmetric API
   description: The altmetric API from Figshare — 1 operation(s) for altmetric.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -88,7 +101,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-articles-api
-  name: Figshare articles API
+  name: Figshare Articles API
   description: The articles API from Figshare — 34 operation(s) for articles.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -126,7 +139,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-authors-api
-  name: Figshare authors API
+  name: Figshare Authors API
   description: The authors API from Figshare — 2 operation(s) for authors.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -164,7 +177,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-collections-api
-  name: Figshare collections API
+  name: Figshare Collections API
   description: The collections API from Figshare — 21 operation(s) for collections.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -202,7 +215,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-institutions-api
-  name: Figshare institutions API
+  name: Figshare Institutions API
   description: The institutions API from Figshare — 20 operation(s) for institutions.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -240,7 +253,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-other-api
-  name: Figshare other API
+  name: Figshare Other API
   description: The other API from Figshare — 7 operation(s) for other.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -277,7 +290,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-profiles-api
-  name: Figshare profiles API
+  name: Figshare Profiles API
   description: The profiles API from Figshare — 2 operation(s) for profiles.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -315,7 +328,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-projects-api
-  name: Figshare projects API
+  name: Figshare Projects API
   description: The projects API from Figshare — 17 operation(s) for projects.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2
@@ -353,7 +366,7 @@ apis:
   - type: Examples
     url: examples/figshare-file_upload-example.json
 - aid: figshare:figshare-symplectic-api
-  name: Figshare symplectic API
+  name: Figshare Symplectic API
   description: The symplectic API from Figshare — 5 operation(s) for symplectic.
   humanURL: https://docs.figshare.com/
   baseURL: https://api.figshare.com/v2

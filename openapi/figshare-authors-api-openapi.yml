@@ -95,6 +95,36 @@ paths:
         - all
 components:
   schemas:
+    AuthorComplete:
+      required:
+      - first_name
+      - group_id
+      - institution_id
+      - is_public
+      - job_title
+      - last_name
+      properties:
+        institution_id:
+          type: integer
+          description: Institution id
+        group_id:
+          type: integer
+          description: Group id
+        first_name:
+          type: string
+          description: First Name
+        last_name:
+          type: string
+          description: Last Name
+        is_public:
+          type: integer
+          description: if 1 then the author has published items
+        job_title:
+          type: string
+          description: Job title
+      allOf:
+      - $ref: '#/components/schemas/Author'
+      x-tag: authors
     ErrorMessage:
       type: object
       properties:
@@ -155,36 +185,6 @@ components:
         is_public:
           type: boolean
           description: Return only authors that have published items if True
-      x-tag: authors
-    AuthorComplete:
-      required:
-      - first_name
-      - group_id
-      - institution_id
-      - is_public
-      - job_title
-      - last_name
-      properties:
-        institution_id:
-          type: integer
-          description: Institution id
-        group_id:
-          type: integer
-          description: Group id
-        first_name:
-          type: string
-          description: First Name
-        last_name:
-          type: string
-          description: Last Name
-        is_public:
-          type: integer
-          description: if 1 then the author has published items
-        job_title:
-          type: string
-          description: Job title
-      allOf:
-      - $ref: '#/components/schemas/Author'
       x-tag: authors
     Author:
       required:

@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Figshare OAUTH API
+  title: Figshare OAuth API
   description: Figshare API v2 - Full REST API documentation for managing articles, collections, projects and more.
   version: '2.0'
   contact:

@@ -126,6 +126,16 @@ paths:
         - all
 components:
   schemas:
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
+      x-tag: common
     ProfileUpdateData:
       type: object
       properties:
@@ -207,16 +217,6 @@ components:
                 format: url
                 example: https://researchgate.net/profile/1
       x-tag: profiles
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
-      x-tag: common
   securitySchemes:
     OAuth2:
       type: oauth2
