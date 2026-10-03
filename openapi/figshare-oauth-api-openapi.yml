@@ -74,37 +74,6 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
-    CreateOAuthToken:
-      required:
-      - client_id
-      - client_secret
-      - grant_type
-      type: object
-      properties:
-        client_id:
-          type: string
-        client_secret:
-          type: string
-        grant_type:
-          type: string
-          enum:
-          - authorization_code
-          - refresh_token
-          - password
-          - client_credentials
-        code:
-          type: string
-          description: Required if grant_type is 'authorization_code'
-        refresh_token:
-          type: string
-          description: Required if grant_type is 'refresh_token'
-        username:
-          type: string
-          description: Required if grant_type is 'password'
-        password:
-          type: string
-          description: Required if grant_type is 'password'
-      x-tag: oauth
     ErrorMessage:
       type: object
       properties:
@@ -146,6 +115,37 @@ components:
           type: string
           description: The scope of the access token
           example: all
+      x-tag: oauth
+    CreateOAuthToken:
+      required:
+      - client_id
+      - client_secret
+      - grant_type
+      type: object
+      properties:
+        client_id:
+          type: string
+        client_secret:
+          type: string
+        grant_type:
+          type: string
+          enum:
+          - authorization_code
+          - refresh_token
+          - password
+          - client_credentials
+        code:
+          type: string
+          description: Required if grant_type is 'authorization_code'
+        refresh_token:
+          type: string
+          description: Required if grant_type is 'refresh_token'
+        username:
+          type: string
+          description: Required if grant_type is 'password'
+        password:
+          type: string
+          description: Required if grant_type is 'password'
       x-tag: oauth
   securitySchemes:
     OAuth2:

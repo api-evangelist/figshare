@@ -216,6 +216,27 @@ paths:
       security: []
 components:
   schemas:
+    License:
+      required:
+      - name
+      - url
+      - value
+      type: object
+      properties:
+        value:
+          type: integer
+          description: License value
+          example: 1
+        name:
+          type: string
+          description: License name
+          example: CC BY
+        url:
+          type: string
+          description: License url
+          format: url
+          example: http://creativecommons.org/licenses/by/4.0/
+      x-tag: institutions
     FundingSearch:
       type: object
       properties:
@@ -223,6 +244,104 @@ components:
           type: string
           description: Search term
       x-tag: funding
+    FundingInformation:
+      required:
+      - funder_name
+      - grant_code
+      - id
+      - is_user_defined
+      - title
+      - url
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Funding id
+          example: 1
+        title:
+          type: string
+          description: The funding name
+          example: Scholarly funding
+        grant_code:
+          type: string
+          description: The grant code
+        funder_name:
+          type: string
+          description: Funder's name
+        is_user_defined:
+          type: integer
+          description: Return 1 whether the grant has been introduced manually, 0 otherwise
+        url:
+          type: string
+          description: The grant url
+          format: url
+          example: https://app.dimensions.ai/details/grant/1
+      x-tag: funding
+    CategoryList:
+      required:
+      - has_children
+      - is_selectable
+      properties:
+        is_selectable:
+          type: boolean
+          description: The selectable status
+          example: true
+        has_children:
+          type: boolean
+          description: True if category has children
+          example: false
+      allOf:
+      - $ref: '#/components/schemas/Category'
+      x-tag: common
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
+      x-tag: common
+    ItemType:
+      required:
+      - icon
+      - id
+      - is_selectable
+      - name
+      - public_description
+      - string_id
+      - url_name
+      type: object
+      properties:
+        id:
+          minimum: 1
+          type: integer
+          description: The ID of the item type.
+        name:
+          type: string
+          description: The name of the item type
+          example: journal contribution
+        string_id:
+          type: string
+          description: The string identifier of the item type.
+          example: journal_contribution
+        icon:
+          type: string
+          description: The string identifying the icon of the item type.
+          example: paper
+        public_description:
+          type: string
+          description: The description of the item type.
+          example: This is the description of an item type
+        is_selectable:
+          type: boolean
+          description: The selectable status
+          example: true
+        url_name:
+          type: string
+          description: The URL name of the item type.
+          example: journal_contribution
     Account:
       required:
       - active
@@ -323,115 +442,6 @@ components:
           description: Symplectic ID associated to account
           example: djohn42
       x-tag: other
-    FundingInformation:
-      required:
-      - funder_name
-      - grant_code
-      - id
-      - is_user_defined
-      - title
-      - url
-      type: object
-      properties:
-        id:
-          type: integer
-          description: Funding id
-          example: 1
-        title:
-          type: string
-          description: The funding name
-          example: Scholarly funding
-        grant_code:
-          type: string
-          description: The grant code
-        funder_name:
-          type: string
-          description: Funder's name
-        is_user_defined:
-          type: integer
-          description: Return 1 whether the grant has been introduced manually, 0 otherwise
-        url:
-          type: string
-          description: The grant url
-          format: url
-          example: https://app.dimensions.ai/details/grant/1
-      x-tag: funding
-    License:
-      required:
-      - name
-      - url
-      - value
-      type: object
-      properties:
-        value:
-          type: integer
-          description: License value
-          example: 1
-        name:
-          type: string
-          description: License name
-          example: CC BY
-        url:
-          type: string
-          description: License url
-          format: url
-          example: http://creativecommons.org/licenses/by/4.0/
-      x-tag: institutions
-    ItemType:
-      required:
-      - icon
-      - id
-      - is_selectable
-      - name
-      - public_description
-      - string_id
-      - url_name
-      type: object
-      properties:
-        id:
-          minimum: 1
-          type: integer
-          description: The ID of the item type.
-        name:
-          type: string
-          description: The name of the item type
-          example: journal contribution
-        string_id:
-          type: string
-          description: The string identifier of the item type.
-          example: journal_contribution
-        icon:
-          type: string
-          description: The string identifying the icon of the item type.
-          example: paper
-        public_description:
-          type: string
-          description: The description of the item type.
-          example: This is the description of an item type
-        is_selectable:
-          type: boolean
-          description: The selectable status
-          example: true
-        url_name:
-          type: string
-          description: The URL name of the item type.
-          example: journal_contribution
-    CategoryList:
-      required:
-      - has_children
-      - is_selectable
-      properties:
-        is_selectable:
-          type: boolean
-          description: The selectable status
-          example: true
-        has_children:
-          type: boolean
-          description: True if category has children
-          example: false
-      allOf:
-      - $ref: '#/components/schemas/Category'
-      x-tag: common
     Category:
       required:
       - id
@@ -466,16 +476,6 @@ components:
           type: integer
           description: Internal id of taxonomy the category is part of
           example: 4
-      x-tag: common
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
       x-tag: common
   securitySchemes:
     OAuth2:
