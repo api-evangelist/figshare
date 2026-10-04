@@ -95,16 +95,6 @@ paths:
         - all
 components:
   schemas:
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
-      x-tag: common
     AuthorComplete:
       required:
       - first_name
@@ -186,6 +176,16 @@ components:
           type: boolean
           description: Return only authors that have published items if True
       x-tag: authors
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
+      x-tag: common
     Author:
       required:
       - first_name

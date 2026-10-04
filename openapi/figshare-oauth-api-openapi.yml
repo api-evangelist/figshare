@@ -74,16 +74,6 @@ paths:
       x-codegen-request-body-name: body
 components:
   schemas:
-    ErrorMessage:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: A machine friendly error code, used by the dev team to identify the error.
-        message:
-          type: string
-          description: A human friendly message explaining the error.
-      x-tag: common
     OAuthToken:
       required:
       - access_token
@@ -116,6 +106,16 @@ components:
           description: The scope of the access token
           example: all
       x-tag: oauth
+    ErrorMessage:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: A machine friendly error code, used by the dev team to identify the error.
+        message:
+          type: string
+          description: A human friendly message explaining the error.
+      x-tag: common
     CreateOAuthToken:
       required:
       - client_id

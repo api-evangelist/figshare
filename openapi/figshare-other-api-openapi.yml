@@ -216,34 +216,6 @@ paths:
       security: []
 components:
   schemas:
-    License:
-      required:
-      - name
-      - url
-      - value
-      type: object
-      properties:
-        value:
-          type: integer
-          description: License value
-          example: 1
-        name:
-          type: string
-          description: License name
-          example: CC BY
-        url:
-          type: string
-          description: License url
-          format: url
-          example: http://creativecommons.org/licenses/by/4.0/
-      x-tag: institutions
-    FundingSearch:
-      type: object
-      properties:
-        search_for:
-          type: string
-          description: Search term
-      x-tag: funding
     FundingInformation:
       required:
       - funder_name
@@ -277,6 +249,48 @@ components:
           format: url
           example: https://app.dimensions.ai/details/grant/1
       x-tag: funding
+    FundingSearch:
+      type: object
+      properties:
+        search_for:
+          type: string
+          description: Search term
+      x-tag: funding
+    Category:
+      required:
+      - id
+      - parent_id
+      - path
+      - source_id
+      - taxonomy_id
+      - title
+      type: object
+      properties:
+        parent_id:
+          type: integer
+          description: Parent category
+          example: 1
+        id:
+          type: integer
+          description: Category id
+          example: 11
+        title:
+          type: string
+          description: Category title
+          example: Anatomy
+        path:
+          type: string
+          description: Path to all ancestor ids
+          example: /450/1024/6532
+        source_id:
+          type: string
+          description: ID in original standard taxonomy
+          example: '300204'
+        taxonomy_id:
+          type: integer
+          description: Internal id of taxonomy the category is part of
+          example: 4
+      x-tag: common
     CategoryList:
       required:
       - has_children
@@ -442,41 +456,27 @@ components:
           description: Symplectic ID associated to account
           example: djohn42
       x-tag: other
-    Category:
+    License:
       required:
-      - id
-      - parent_id
-      - path
-      - source_id
-      - taxonomy_id
-      - title
+      - name
+      - url
+      - value
       type: object
       properties:
-        parent_id:
+        value:
           type: integer
-          description: Parent category
+          description: License value
           example: 1
-        id:
-          type: integer
-          description: Category id
-          example: 11
-        title:
+        name:
           type: string
-          description: Category title
-          example: Anatomy
-        path:
+          description: License name
+          example: CC BY
+        url:
           type: string
-          description: Path to all ancestor ids
-          example: /450/1024/6532
-        source_id:
-          type: string
-          description: ID in original standard taxonomy
-          example: '300204'
-        taxonomy_id:
-          type: integer
-          description: Internal id of taxonomy the category is part of
-          example: 4
-      x-tag: common
+          description: License url
+          format: url
+          example: http://creativecommons.org/licenses/by/4.0/
+      x-tag: institutions
   securitySchemes:
     OAuth2:
       type: oauth2
