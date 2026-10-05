@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.figshare.com/swagger.json",
+ "requested_url": "https://docs.figshare.com/swagger.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 694889,
+ "sha256": "9dfb419f443040fc7e76c5c8b12c92d44bc21498fe4599c9032c5b0611e02b9c",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 0.994), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
