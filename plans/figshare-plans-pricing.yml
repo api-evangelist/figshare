@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-12 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-12'
 specification: API Commons Plans
 specificationVersion: '0.1'
 provider: Figshare
@@ -156,3 +161,59 @@ plans:
     price:
       cadence: custom
       notes: Contact Figshare/Springer Nature for institutional pricing
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  units: []
+  plans:
+  - name: Free
+    access: free
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Figshare+ Small
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Figshare+ Medium
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Figshare+ Large
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Figshare+ Extra Large
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Figshare+ Up to 5TB
+    access: paid
+    model: unstated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Figshare+ Over 5TB
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
+  - name: Institutional Figshare
+    access: enterprise
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []
