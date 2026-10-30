@@ -1,4 +1,4 @@
-# Figshare (figshare)
+# Figshare
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,74 +64,199 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Figshare is a research data repository platform that enables researchers, institutions, and organizations to upload, manage, and publicly share scientific outputs including datasets, figures, media, papers, posters, and software. The platform provides persistent DOI assignment for all published research outputs, enabling proper citation and long-term discoverability. Figshare's REST API v2 allows programmatic access to articles, collections, projects, file uploads, statistics, and administrative functions across both public and private (authenticated) endpoints.
+Figshare is a research data repository platform that enables researchers, institutions, and organizations to upload, manage, and publicly share scientific outputs including datasets, figures, media, papers, posters, and software. The platform provides persistent DOI assignment for all published research outputs, enabling proper citation and long-term discoverability. Figshare's REST API v2 allows programmatic access to articles, collections, projects, file uploads, statistics, and administrative functions. The platform is built on AWS infrastructure and supports both individual researchers with a free 20GB tier and institutional deployments with custom storage configurations up to multiple terabytes.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/figshare/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/figshare/refs/heads/main/apis.yml)
+**Areas:** Research Data · Research Repository · Open Science · DOI · Datasets · Academic · File Storage · Open Access · Figshare · OAI-PMH
 
-**Naftiko Fleet:** [https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=figshare-api-evangelist&utm_content=repo](https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=figshare-api-evangelist&utm_content=repo)
+## Figshare on APIs.io
 
-## Tags
+Everything profiled for Figshare is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/figshare/](https://apis.io/providers/figshare/)** — or go straight to one of the APIs or properties below.
 
-- Research Data
-- Data Repository
-- Open Science
-- DOI
-- Datasets
-- Academic
-- File Storage
-- Open Access
+### APIs (10)
 
-## APIs
+- [Figshare Altmetric API](https://apis.io/apis/figshare/figshare-altmetric-api/) — The altmetric API from Figshare — 1 operation(s) for altmetric.
+- [Figshare Articles API](https://apis.io/apis/figshare/figshare-articles-api/) — The articles API from Figshare — 34 operation(s) for articles.
+- [Figshare Authors API](https://apis.io/apis/figshare/figshare-authors-api/) — The authors API from Figshare — 2 operation(s) for authors.
+- [Figshare Collections API](https://apis.io/apis/figshare/figshare-collections-api/) — The collections API from Figshare — 21 operation(s) for collections.
+- [Figshare Institutions API](https://apis.io/apis/figshare/figshare-institutions-api/) — The institutions API from Figshare — 20 operation(s) for institutions.
+- [Figshare Other API](https://apis.io/apis/figshare/figshare-other-api/) — The other API from Figshare — 7 operation(s) for other.
+- [Figshare Profiles API](https://apis.io/apis/figshare/figshare-profiles-api/) — The profiles API from Figshare — 2 operation(s) for profiles.
+- [Figshare Projects API](https://apis.io/apis/figshare/figshare-projects-api/) — The projects API from Figshare — 17 operation(s) for projects.
+- [Figshare Symplectic API](https://apis.io/apis/figshare/figshare-symplectic-api/) — The symplectic API from Figshare — 5 operation(s) for symplectic.
+- [Figshare OAUTH API](https://apis.io/apis/figshare/figshare-oauth-api/) — The oauth API from Figshare — 1 operation(s) for oauth.
 
-| API | Base URL | Documentation |
-|-----|----------|---------------|
-| Figshare API | https://api.figshare.com/v2 | https://docs.figshare.com/ |
+### Published properties
 
-## Plans, Rate Limits, and FinOps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-| Resource | File |
-|----------|------|
-| Plans & Pricing | [plans/figshare-plans-pricing.yml](plans/figshare-plans-pricing.yml) |
-| Rate Limits | [rate-limits/figshare-rate-limits.yml](rate-limits/figshare-rate-limits.yml) |
-| FinOps | [finops/figshare-finops.yml](finops/figshare-finops.yml) |
+#### Agentic access (1)
 
-### Pricing Summary
+Which operations an agent can call, which act, and which need a human in the loop.
 
-| Plan | Type | Cost |
-|------|------|------|
-| Free | Free | $0 (20GB storage) |
-| Figshare+ up to 250GB | Paid one-time | $1,225 DPC |
-| Figshare+ up to 500GB | Paid one-time | $2,450 DPC |
-| Figshare+ up to 750GB | Paid one-time | $3,675 DPC |
-| Figshare+ up to 1TB | Paid one-time | $4,900 DPC |
-| Figshare+ up to 5TB | Paid one-time | $24,500 DPC |
-| Figshare+ over 5TB | Enterprise | Custom quote |
-| Institutional Figshare | Enterprise | Custom quote |
+- [Figshare Agentic Access](https://apis.io/agentic-access/figshare/figshare-agentic-access/)
 
-### Rate Limits Summary
+#### JSON Schema (13)
 
-Figshare does not enforce hard automatic rate limits. The recommended usage guideline is no more than 1 request per second. Abuse monitoring is active and Figshare reserves the right to throttle (HTTP 429) or block excessive requests.
+The data models the API reads and writes.
 
-## Timestamps
+- [Account](https://apis.io/schemas/figshare/figshare-account/)
+- [Article](https://apis.io/schemas/figshare/figshare-article/)
+- [ArticleComplete](https://apis.io/schemas/figshare/figshare-articlecomplete/)
+- [Author](https://apis.io/schemas/figshare/figshare-author/)
+- [Category](https://apis.io/schemas/figshare/figshare-category/)
+- [Collection](https://apis.io/schemas/figshare/figshare-collection/)
+- [CollectionComplete](https://apis.io/schemas/figshare/figshare-collectioncomplete/)
+- [FundingInformation](https://apis.io/schemas/figshare/figshare-fundinginformation/)
+- [License](https://apis.io/schemas/figshare/figshare-license/)
+- [PrivateFile](https://apis.io/schemas/figshare/figshare-privatefile/)
+- [Project](https://apis.io/schemas/figshare/figshare-project/)
+- [ProjectComplete](https://apis.io/schemas/figshare/figshare-projectcomplete/)
+- [PublicFile](https://apis.io/schemas/figshare/figshare-publicfile/)
 
-- **Created:** 2026-06-12
-- **Modified:** 2026-06-12
+#### JSON-LD (1)
 
-## Common Properties
+Linked-data contexts for the provider's vocabulary.
 
-| Property | URL |
-|----------|-----|
-| Website | https://figshare.com/ |
-| Documentation | https://docs.figshare.com/ |
-| GitHub Organization | https://github.com/figshare |
-| Blog | https://info.figshare.com/blog/ |
-| Pricing | https://info.figshare.com/figshare-plus/ |
-| Status Page | https://status.figshare.com/ |
-| LinkedIn | https://www.linkedin.com/company/figshare/ |
-| X (Twitter) | https://x.com/figshare |
-| Support | https://support.figshare.com/ |
-| User Documentation | https://info.figshare.com/user-guide/how-to-use-the-figshare-api/ |
+- [Figshare Context](https://apis.io/jsonld/figshare/figshare-context/)
 
-## Maintainers
+#### Vocabulary (1)
 
-- **Kin Lane** — kin@apievangelist.com
+The provider's domain terms, defined.
+
+- [Figshare API Vocabulary](https://apis.io/vocabularies/figshare/figshare-vocabulary/)
+
+#### Examples (4)
+
+Example requests and responses.
+
+- [Figshare Article Example](https://apis.io/examples/figshare/figshare-article-example/)
+- [Figshare Collection Example](https://apis.io/examples/figshare/figshare-collection-example/)
+- [Figshare File_Upload Example](https://apis.io/examples/figshare/figshare-file_upload-example/)
+- [Figshare Project Example](https://apis.io/examples/figshare/figshare-project-example/)
+
+#### Collections (20)
+
+Postman and Open Collection request collections.
+
+- [Figshare altmetric API](https://apis.io/collections/figshare/open-figshare-altmetric-api/)
+- [Figshare altmetric articles API](https://apis.io/collections/figshare/open-figshare-articles-api/)
+- [Figshare altmetric authors API](https://apis.io/collections/figshare/open-figshare-authors-api/)
+- [Figshare altmetric collections API](https://apis.io/collections/figshare/open-figshare-collections-api/)
+- [Figshare altmetric institutions API](https://apis.io/collections/figshare/open-figshare-institutions-api/)
+- [Figshare altmetric oauth API](https://apis.io/collections/figshare/open-figshare-oauth-api/)
+- [Figshare altmetric other API](https://apis.io/collections/figshare/open-figshare-other-api/)
+- [Figshare altmetric profiles API](https://apis.io/collections/figshare/open-figshare-profiles-api/)
+- [Figshare altmetric projects API](https://apis.io/collections/figshare/open-figshare-projects-api/)
+- [Figshare altmetric symplectic API](https://apis.io/collections/figshare/open-figshare-symplectic-api/)
+- [Figshare altmetric API](https://apis.io/collections/figshare/postman-figshare-altmetric-api/)
+- [Figshare altmetric articles API](https://apis.io/collections/figshare/postman-figshare-articles-api/)
+- [Figshare altmetric authors API](https://apis.io/collections/figshare/postman-figshare-authors-api/)
+- [Figshare altmetric collections API](https://apis.io/collections/figshare/postman-figshare-collections-api/)
+- [Figshare altmetric institutions API](https://apis.io/collections/figshare/postman-figshare-institutions-api/)
+- [Figshare altmetric oauth API](https://apis.io/collections/figshare/postman-figshare-oauth-api/)
+- [Figshare altmetric other API](https://apis.io/collections/figshare/postman-figshare-other-api/)
+- [Figshare altmetric profiles API](https://apis.io/collections/figshare/postman-figshare-profiles-api/)
+- [Figshare altmetric projects API](https://apis.io/collections/figshare/postman-figshare-projects-api/)
+- [Figshare altmetric symplectic API](https://apis.io/collections/figshare/postman-figshare-symplectic-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Figshare — jsonschema rules](https://apis.io/rules/figshare/figshare-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Figshare Authentication](https://apis.io/security/figshare/figshare-authentication/)
+- [Figshare Domain Security](https://apis.io/security/figshare/figshare-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Figshare Scopes](https://apis.io/scopes/figshare/figshare-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Figshare Plans Pricing](https://apis.io/plans/figshare/figshare-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Figshare Rate Limits](https://apis.io/rate-limits/figshare/figshare-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Figshare Finops](https://apis.io/finops/figshare/figshare-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://figshare.com/)
+- [Documentation](https://docs.figshare.com/)
+- [Pricing](https://info.figshare.com/figshare-plus/)
+- [Support](https://support.figshare.com/)
+- [Blog](https://info.figshare.com/blog/)
+- [GitHub](https://github.com/figshare)
+- [Status](https://status.figshare.com/)
+
+## API Evangelist rating
+
+**Kin Score 37.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 66.9 |
+| Contract governance | 23.5 |
+| Operational transparency | 26.3 |
+| Developer ergonomics | 17.9 |
+| Access clarity | 18.4 |
+
+**Agent readiness 31.2** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 26.5** — Education & Research
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/figshare/](https://apis.io/providers/figshare/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Figshare: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/figshare/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
